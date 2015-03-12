@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
 
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 -->
 <html>
-    <head>
-        <meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="mobile-web-app-capable" content="yes">
 
 		<title>Home/Inicio</title>
-		
+
 		<link rel="stylesheet" href="lib/onsen/css/onsenui.css">
 		<link rel="stylesheet" href="styles/onsen-css-components-blue-theme.css">
 		<link rel="stylesheet" href="styles/app.css"/>
@@ -39,9 +39,9 @@
 		<script src="js/app.js"></script>
 
 		<style>
-		body{
-			background: #EAEDF3;
-		}
+			body {
+				background: #EAEDF3;
+			}
 			.item {
 				padding: 10px;
 				line-height: 1;
@@ -81,26 +81,25 @@
 				float: right;
 			}
 		</style>
-		
-		<script type="text/javascript">
-		
-ons.navigator.pushPage('NewTicket.html');
-		url= "http://empowerlabs.com/proyectos/helpDesk/loginTemplate.php";
-  	$.ajax({
-      	type: 'GET',
-      	url: url,
-      	success: function(data){
-      		if(data.response!=="ok"){
-//window.location = "login.html";
-      		}
-      		//ons.notification.alert({message: ''+data.response, title:"App HelpDesk"});
-      	}
-      });
-</script>
 
-    </head>
-    <body>
-    <body ng-controller="AppController">
+		<script type="text/javascript">
+			ons.navigator.pushPage('NewTicket.html');
+			url = "http://empowerlabs.com/proyectos/helpDesk/loginTemplate.php";
+			$.ajax({
+				type : 'GET',
+				url : url,
+				success : function(data) {
+					if (data.response !== "ok") {
+						//window.location = "login.html";
+					}
+					//ons.notification.alert({message: ''+data.response, title:"App HelpDesk"});
+				}
+			});
+		</script>
+
+	</head>
+	<body>
+	<body ng-controller="AppController">
 		<ons-sliding-menu
 		menu-page="menu.html" main-page="page1.html" side="left"
 		var="menu" type="reveal" max-slide-distance="260px" swipable="false"></ons-sliding-menu>
@@ -110,16 +109,16 @@ ons.navigator.pushPage('NewTicket.html');
 				<!--<ons-toolbar modifier="transparent" class="custom-azul"></ons-toolbar>-->
 
 				<ons-list class="menu-list">
-    	<div class="status-bar-div"></div>
+					<div class="status-bar-div"></div>
 					<ons-list-item>
-					
+
 					</ons-list-item>
 
 					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page1.html', {closeMenu: true})">
 						<ons-icon icon="ion-home custom-icon"></ons-icon>
 						Actos
 					</ons-list-item>
-					
+
 					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page2.html', {closeMenu: true})">
 						<ons-icon icon="ion-home custom-icon"></ons-icon>
 						Recepción
@@ -156,11 +155,11 @@ ons.navigator.pushPage('NewTicket.html');
 				</ons-list>
 			</ons-page>
 		</ons-template>
-		
+
 		<ons-template id="page1.html">
 			<ons-navigator animation="slide" var="app.navi">
 				<ons-page>
-    	<div class="status-bar-div"></div>
+					<div class="status-bar-div"></div>
 					<ons-toolbar>
 						<div class="left">
 							<ons-toolbar-button ng-click="menu.toggle()">
@@ -202,6 +201,7 @@ ons.navigator.pushPage('NewTicket.html');
 		<ons-template id="detailSPTE.html">
 			<ons-page ng-controller="SPTEDetailController">
 
+				<div class="status-bar-div"></div>
 				<ons-toolbar>
 					<div class="left">
 						<ons-back-button>
@@ -233,50 +233,50 @@ ons.navigator.pushPage('NewTicket.html');
 
 					<ons-list-item modifier="chevron" ng-click="doSomething()">
 						<ons-icon icon="ion-star" fixed-width="true" style="color: #ccc"></ons-icon>
-								Marcar como favorito
-							</ons-list-item>
-						</ons-list>
-
-						<ons-list style="margin-top: 10px">
-							<ons-list-item class="item">
-								<header>
-									<span class="item-title">{{item.nombre}}</span>
-								</header>
-								<p class="item-desc">
-									{{item.act}}
-								</p>
-								<p class="item-desc">
-									<strong>Descripción: </strong> {{item.description}}
-								</p>
-								<p class="item-desc">
-									<strong>Cliente: </strong>{{item.account}}
-								</p>
-								<p class="item-desc">
-									<strong>Asignado a: </strong>{{item.assignedto}}
-								</p>
-								<p class="item-desc">
-									<strong>Responsable: </strong>{{item.responsiblenow}}
-								</p>
-								<p class="item-desc">
-									<strong>Etapa: </strong>{{item.stage}}
-								</p>
+						Marcar como favorito
 					</ons-list-item>
-							<ons-list-item class="item">
-								<header>
-									<span class="item-title">Próximo contacto con el cliente</span>
-								</header>
-								<p class="item-desc">
-									{{item.act}}
-								</p>
-								<p class="item-desc">
-									<strong>Próxima fecha de contacto: </strong>{{item.nextcontactdate}}
-								</p>
-								<p class="item-desc">
-									<strong>Tipo: </strong>{{item.nextcontacttype}}
-								</p>
-								<p class="item-desc">
-									<strong>Estado: </strong>{{item.status}}
-								</p>
+				</ons-list>
+
+				<ons-list style="margin-top: 10px">
+					<ons-list-item class="item">
+						<header>
+							<span class="item-title">{{item.nombre}}</span>
+						</header>
+						<p class="item-desc">
+							{{item.act}}
+						</p>
+						<p class="item-desc">
+							<strong>Descripción: </strong> {{item.description}}
+						</p>
+						<p class="item-desc">
+							<strong>Cliente: </strong>{{item.account}}
+						</p>
+						<p class="item-desc">
+							<strong>Asignado a: </strong>{{item.assignedto}}
+						</p>
+						<p class="item-desc">
+							<strong>Responsable: </strong>{{item.responsiblenow}}
+						</p>
+						<p class="item-desc">
+							<strong>Etapa: </strong>{{item.stage}}
+						</p>
+					</ons-list-item>
+					<ons-list-item class="item">
+						<header>
+							<span class="item-title">Próximo contacto con el cliente</span>
+						</header>
+						<p class="item-desc">
+							{{item.act}}
+						</p>
+						<p class="item-desc">
+							<strong>Próxima fecha de contacto: </strong>{{item.nextcontactdate}}
+						</p>
+						<p class="item-desc">
+							<strong>Tipo: </strong>{{item.nextcontacttype}}
+						</p>
+						<p class="item-desc">
+							<strong>Estado: </strong>{{item.status}}
+						</p>
 					</ons-list-item>
 				</ons-list>
 
@@ -288,7 +288,7 @@ ons.navigator.pushPage('NewTicket.html');
 		<ons-template id="page2.html">
 			<ons-navigator animation="slide" var="app.navi">
 				<ons-page>
-    	<div class="status-bar-div"></div>
+					<div class="status-bar-div"></div>
 					<ons-toolbar>
 						<div class="left">
 							<ons-toolbar-button ng-click="menu.toggle()">
@@ -330,6 +330,7 @@ ons.navigator.pushPage('NewTicket.html');
 		<ons-template id="detail.html">
 			<ons-page ng-controller="DetailController">
 
+				<div class="status-bar-div"></div>
 				<ons-toolbar>
 					<div class="left">
 						<ons-back-button>
@@ -361,30 +362,30 @@ ons.navigator.pushPage('NewTicket.html');
 
 					<ons-list-item modifier="chevron" ng-click="doSomething()">
 						<ons-icon icon="ion-star" fixed-width="true" style="color: #ccc"></ons-icon>
-								Marcar como favorito
-							</ons-list-item>
-						</ons-list>
+						Marcar como favorito
+					</ons-list-item>
+				</ons-list>
 
-						<ons-list style="margin-top: 10px">
-							<ons-list-item class="item">
-								<header>
-									<span class="item-title">{{item.subject}}</span>
-								</header>
-								<p class="item-desc">
-									{{item.message}}
-								</p>
-								<p class="item-desc">
-									<strong>Por: </strong>{{item.caller}}
-								</p>
-								<p class="item-desc">
-									<strong>Email: </strong>{{item.email}}
-								</p>
-								<p class="item-desc">
-									<strong>Responsable: </strong>{{item.addressed_to}}
-								</p>
-								<p class="item-desc">
-									<strong>Tipo: </strong>{{item.type}}
-								</p>
+				<ons-list style="margin-top: 10px">
+					<ons-list-item class="item">
+						<header>
+							<span class="item-title">{{item.subject}}</span>
+						</header>
+						<p class="item-desc">
+							{{item.message}}
+						</p>
+						<p class="item-desc">
+							<strong>Por: </strong>{{item.caller}}
+						</p>
+						<p class="item-desc">
+							<strong>Email: </strong>{{item.email}}
+						</p>
+						<p class="item-desc">
+							<strong>Responsable: </strong>{{item.addressed_to}}
+						</p>
+						<p class="item-desc">
+							<strong>Tipo: </strong>{{item.type}}
+						</p>
 					</ons-list-item>
 				</ons-list>
 
@@ -411,6 +412,7 @@ ons.navigator.pushPage('NewTicket.html');
 
 				<ons-template id="home.html">
 
+					<div class="status-bar-div"></div>
 					<ons-toolbar>
 						<div class="left">
 							<ons-toolbar-button ng-click="menu.toggle()">
@@ -449,6 +451,7 @@ ons.navigator.pushPage('NewTicket.html');
 				</ons-template>
 
 				<ons-template id="fav.html">
+					<div class="status-bar-div"></div>
 					<ons-toolbar>
 						<div class="left">
 							<ons-toolbar-button ng-click="menu.toggle()">
@@ -466,6 +469,7 @@ ons.navigator.pushPage('NewTicket.html');
 				</ons-template>
 
 				<ons-template id="settings.html">
+					<div class="status-bar-div"></div>
 					<ons-toolbar>
 						<div class="left">
 							<ons-toolbar-button ng-click="menu.toggle()">
@@ -537,6 +541,7 @@ ons.navigator.pushPage('NewTicket.html');
 				<ons-template id="ticketOne.html">
 					<ons-page ng-controller="TicketOneController">
 
+						<div class="status-bar-div"></div>
 						<ons-toolbar>
 							<div class="left">
 								<ons-back-button  ng-click="menu.setMainPage('page3.html')">
@@ -619,6 +624,7 @@ ons.navigator.pushPage('NewTicket.html');
 
 				<ons-template id="people.html">
 					<ons-page>
+						<div class="status-bar-div"></div>
 						<ons-toolbar>
 							<div class="left">
 								<ons-toolbar-button ng-click="menu.toggle()">
@@ -663,6 +669,7 @@ ons.navigator.pushPage('NewTicket.html');
 				</ons-template>
 				<ons-template id="perfil.html">
 					<ons-page>
+						<div class="status-bar-div"></div>
 						<ons-toolbar>
 							<div class="left">
 								<ons-toolbar-button ng-click="menu.toggle()">
@@ -744,6 +751,7 @@ ons.navigator.pushPage('NewTicket.html');
 				</ons-template>
 				<ons-template id="mensajes.html">
 					<ons-page>
+						<div class="status-bar-div"></div>
 						<ons-toolbar>
 							<div class="right">
 								<ons-toolbar-button>
@@ -795,6 +803,7 @@ ons.navigator.pushPage('NewTicket.html');
 		</ons-template>
 		<ons-template id="page5.html">
 			<ons-navigator animation="slide" var="app.navi">
+				<div class="status-bar-div"></div>
 				<ons-toolbar>
 					<div class="left">
 						<ons-toolbar-button ng-click="menu.toggle()">
@@ -864,48 +873,49 @@ ons.navigator.pushPage('NewTicket.html');
 			</ons-navigator>
 		</ons-template>
 		<ons-template id="newTicket.html">
-				<ons-page>
-					<ons-toolbar>
-						<div class="left">
-							<ons-back-button>
-								Regresar
-							</ons-back-button>
-						</div>
-						<div class="center">
-							Nuevo Ticket
-						</div>
-					</ons-toolbar>
-
-					<ons-list modifier="inset" style="margin-top: 10px">
-						<ons-list-item>
-							<input type="text" class="text-input text-input--transparent" placeholder="Fecha" style="width: 100%">
-						</ons-list-item>
-						<ons-list-item>
-							<input type="text" class="text-input text-input--transparent" placeholder="Autor" style="width: 100%">
-						</ons-list-item>
-						<ons-list-item>
-							<input type="text" class="text-input text-input--transparent" placeholder="Problema" style="width: 100%">
-						</ons-list-item>
-						<ons-list-item>
-							<input type="text" class="text-input text-input--transparent" placeholder="Prioridad" style="width: 100%">
-						</ons-list-item>
-						<ons-list-item>
-							<textarea class="textarea--transparent" placeholder="Descripción del problema" style="width: 100%; height: 100px;"></textarea>
-						</ons-list-item>
-
-						<ons-list-item modifier="chevron">
-							<ons-icon icon="fa-tag" style="opacity:0.2"></ons-icon>
-						</ons-list-item>
-
-					</ons-list>
-
-					<div style="padding: 10px 9px">
-						<ons-button modifier="large" style="margin: 0 auto;">
-							Enviar
-						</ons-button>
+			<ons-page>
+				<div class="status-bar-div"></div>
+				<ons-toolbar>
+					<div class="left">
+						<ons-back-button>
+							Regresar
+						</ons-back-button>
 					</div>
+					<div class="center">
+						Nuevo Ticket
+					</div>
+				</ons-toolbar>
 
-				</ons-page>
+				<ons-list modifier="inset" style="margin-top: 10px">
+					<ons-list-item>
+						<input type="text" class="text-input text-input--transparent" placeholder="Fecha" style="width: 100%">
+					</ons-list-item>
+					<ons-list-item>
+						<input type="text" class="text-input text-input--transparent" placeholder="Autor" style="width: 100%">
+					</ons-list-item>
+					<ons-list-item>
+						<input type="text" class="text-input text-input--transparent" placeholder="Problema" style="width: 100%">
+					</ons-list-item>
+					<ons-list-item>
+						<input type="text" class="text-input text-input--transparent" placeholder="Prioridad" style="width: 100%">
+					</ons-list-item>
+					<ons-list-item>
+						<textarea class="textarea--transparent" placeholder="Descripción del problema" style="width: 100%; height: 100px;"></textarea>
+					</ons-list-item>
+
+					<ons-list-item modifier="chevron">
+						<ons-icon icon="fa-tag" style="opacity:0.2"></ons-icon>
+					</ons-list-item>
+
+				</ons-list>
+
+				<div style="padding: 10px 9px">
+					<ons-button modifier="large" style="margin: 0 auto;">
+						Enviar
+					</ons-button>
+				</div>
+
+			</ons-page>
 		</ons-template>
 	</body>
 </html>
