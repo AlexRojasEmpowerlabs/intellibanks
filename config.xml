@@ -2,10 +2,10 @@
 <widget id="com.empowerlabs.intellibanks" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>MobileIntellibanks</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Aplicación de intellibanks para consultar datos de los dashboards de la web "Proyecto Notaria 22"
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="jose.rojas@empowerlabs.com" href="http://alexrojas.cloudapp.net">
+        Equipo Lab Mobile Apps
     </author>
     <content src="index.html" />
     <preference name="permissions" value="none" />
@@ -15,7 +15,7 @@
     <preference name="webviewbounce" value="true" />
     <preference name="prerendered-icon" value="true" />
     <preference name="stay-in-webview" value="false" />
-    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="ios-statusbarstyle" value="black-translucent" />
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="show-splash-screen-spinner" value="true" />
