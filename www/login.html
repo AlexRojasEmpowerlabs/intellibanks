@@ -15,25 +15,7 @@
 		<script src="lib/onsen/js/onsenui.js"></script>
 		<script src="js/jquery.js"></script>
 		
-		<script> 
-		ons.bootstrap();
-		function send(){
-			url= "http://empowerlabs.com/proyectos/helpDesk/login.php";
-  	$.ajax({
-      	type: 'POST',
-      	url: url,
-      	data: $( "#logueo" ).serialize(),
-      	success: function(data){
-      		if(data.response=="ok"){
-      			window.location = "index.html";
-      		}
-      		else{
-      		ons.notification.alert({message: ''+data.response, title:"Intellibanks"});
-      		}
-      	}
-      });
-		}
-		</script>
+		<script src="js/login.js"> </script>
 
 		<style>
 			.item {
@@ -75,7 +57,7 @@
 			<div class="login-form">
 				<div class="center">
 					<form id="logueo">
-				<input type="email" class="text-input--underbar" placeholder="Usuario" value="" name="user" /><br>
+				<input id="user" type="email" class="text-input--underbar" placeholder="Usuario" value="" name="user" /><br>
 				<input type="password" class="text-input--underbar" placeholder="Contraseña" value="" name="pass" />
 				<br>
 				<br>
