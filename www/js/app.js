@@ -3,6 +3,7 @@ var todos= {};
 var todosCall={};
 var todosSPTE={};
 var userInfo={};
+var Profile="[]";
   var module = ons.bootstrap('my-app', ['onsen']);
 $(document).ready(function () {
 	
@@ -17,16 +18,23 @@ $(document).ready(function () {
     };
   });
   
-  module.controller('profileController', function($scope, $data, $http) {
-    $http.post('http://empowerlabs.com/proyectos/helpDesk/getUserData.php', { "user" : 'JoseRojas'}).
+  module.controller('profileController', function($scope, $dataProfile, $http) {
+    $http.post('http://empowerlabs.com/proyectos/helpDesk/getUserData.php', { user : 'JoseRojas'}).
   success(function(data, status, headers, config) {
   	$scope.ons.notification.alert({message: ""+data.firstname,title: "intellibanks"});
-    $data=data;
-    $scope.data = $data;
+    $dataProfile=data;
+    Profile=data;
+    $scope.data = $dataProfile;
   }).
   error(function(data, status, headers, config) {
   	
   });
+  });
+   module.factory('$dataProfile', function() {
+      var dataProfile;
+      		dataProfile=Profile;
+      
+      return dataProfile;
   });
 
   module.controller('DetailController', function($scope, $data) {
