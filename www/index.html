@@ -616,10 +616,10 @@ under the License.
 			</ons-navigator>
 		</ons-template>
 		<ons-template id="page4.html">
-			<ons-navigator animation="slide" var="app.navi">
+			<ons-navigator animation="slide">
 				<ons-tabbar>
-					<ons-tab page="mensajes.html">
-						<ons-icon icon="ion-ios7-chatboxes" class="tab-icon"></ons-icon><span class="tab-label">Mensajes</span>
+					<ons-tab><!-- page="mensajes.html"-->
+						<ons-icon icon="ion-ios7-chatboxes" class="tab-icon"></ons-icon><span class="tab-label">Chats</span>
 					</ons-tab>
 
 					<ons-tab page="people.html" active="true">
@@ -753,16 +753,16 @@ under the License.
 			<ons-page>
 				<ons-toolbar>
 					<div class="center">
-						Log In
+						Intellibanks Móvil
 					</div>
 				</ons-toolbar>
 
 				<div class="login-form">
 					<div class="center">
 						<form id="logueo">
-							<input id="user" type="email" class="text-input--underbar" placeholder="Usuario" value="" name="user" />
+							<input id="user" type="email" class="text-input--underbar" placeholder="Usuario" value="" name="user" style="background:#FFFFFF; text-align: center; border-radius: 5px;" />
 							<br>
-							<input type="password" class="text-input--underbar" placeholder="Contraseña" value="" name="pass" />
+							<input type="password" class="text-input--underbar" placeholder="Contraseña" value="" name="pass" style="background:#FFFFFF; text-align: center; border-radius: 5px;" />
 							<br>
 							<br>
 							<ons-button modifier="large" class="login-button" onclick="send();">
@@ -859,59 +859,61 @@ under the License.
 			</ons-page>
 		</ons-template>
 		<ons-template id="people.html">
-			<ons-page ng-controller="peopleController">
-				<div class="status-bar-div"></div>
-				<ons-toolbar>
-					<div class="left">
-						<ons-toolbar-button ng-click="menu.toggle()">
-							<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
-						</ons-toolbar-button>
+			<ons-navigator animation="lift">
+				<ons-page ng-controller="peopleController">
+					<div class="status-bar-div"></div>
+					<ons-toolbar>
+						<div class="left">
+							<ons-toolbar-button ng-click="menu.toggle()">
+								<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+						<div class="center">
+							Colaboradores
+						</div>
+						<div class="right">
+							<ons-toolbar-button>
+								<ons-icon icon="ion-plus" fixed-width="false" style="vertical-align: -4px;"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+					</ons-toolbar>
+
+					<div class="navigation-bar">
+						<div class="navigation-bar__center">
+
+							<input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Search">
+
+						</div>
 					</div>
-					<div class="center">
-						Colaboradores
-					</div>
-					<div class="right">
-						<ons-toolbar-button>
-							<ons-icon icon="ion-plus" fixed-width="false" style="vertical-align: -4px;"></ons-icon>
-						</ons-toolbar-button>
-					</div>
-				</ons-toolbar>
 
-				<div class="navigation-bar">
-					<div class="navigation-bar__center">
+					<ons-list class="person-list">
+						<ons-list-header class="person-list-header">
+							<!--{{data[char]}}-->
+						</ons-list-header>
+						<ons-list-item class="person" modifier="tappable" ng-repeat="i in data">
+							<ons-row>
+								<ons-col width="40px">
+									<img src="img/def.png" class="person-image">
+								</ons-col>
+								<ons-col class="person-name" ng-click="newMessage(i)">
+									{{i}}
+								</ons-col>
+							</ons-row>
+						</ons-list-item>
+					</ons-list>
 
-						<input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Search">
-
-					</div>
-				</div>
-
-				<ons-list class="person-list">
-					<ons-list-header class="person-list-header">
-						<!--{{data[char]}}-->
-					</ons-list-header>
-					<ons-list-item class="person" modifier="tappable" ng-repeat="i in data">
-						<ons-row>
-							<ons-col width="40px">
-								<img src="img/def.png" class="person-image">
-							</ons-col>
-							<ons-col class="person-name">
-								{{i}}
-							</ons-col>
-						</ons-row>
-					</ons-list-item>
-				</ons-list>
-
-			</ons-page>
+				</ons-page>
+			</ons-navigator>
 		</ons-template>
 
 		<ons-template id="mensajes.html">
-			<ons-page>
+			<ons-page ng-controller="newMessageController">
 				<div class="status-bar-div"></div>
 				<ons-toolbar>
-					<div class="right">
-						<ons-toolbar-button>
-							Cancelar
-						</ons-toolbar-button>
+					<div class="left">
+						<ons-back-button>
+							Regresar
+						</ons-back-button>
 					</div>
 					<div class="center">
 						Nuevo Mensaje
@@ -922,14 +924,14 @@ under the License.
 					<ons-list-item class="to-wrapper">
 						<ons-row>
 							<ons-col width="52px">
-								<img src="images/profile-image-02.png" width="42" class="to-image">
+								<img src="img/def.png" width="42" class="to-image">
 							</ons-col>
 							<ons-col>
 								<div class="to-name">
-									Leonel
+									{{seleccion}}
 								</div>
 								<div class="to-email">
-									@leonelRosales
+									{{seleccion}}
 								</div>
 							</ons-col>
 						</ons-row>

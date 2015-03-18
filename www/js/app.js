@@ -5,6 +5,7 @@ var todosSPTE={};
 var userInfo={};
 var Profile="[]";
 var People="[]";
+var selectedUser="";
   var module = ons.bootstrap('my-app', ['onsen']);
 $(document).ready(function () {
 	
@@ -26,6 +27,10 @@ $(document).ready(function () {
     $dataPeople=data;
     People=data;
     $scope.data = $dataPeople;
+    $scope.newMessage=function(i){
+    	selectedUser=i;
+    	$scope.ons.navigator.pushPage('mensajes.html', {title : i});
+    	};
   }).
   error(function(data, status, headers, config) {
   	
@@ -36,6 +41,9 @@ $(document).ready(function () {
       		dataPeople=People;
       
       return dataPeople;
+  });
+  module.controller('newMessageController', function($scope) {
+    $scope.seleccion=selectedUser;
   });
   
   module.controller('profileController', function($scope, $dataProfile, $http) {
