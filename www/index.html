@@ -185,9 +185,16 @@ under the License.
 							</ons-toolbar-button>
 						</div>
 					</ons-toolbar>
+					<div class="navigation-bar">
+						<div class="navigation-bar__center">
+
+							<input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Buscar" ng-model="entradaSPTE">
+
+						</div>
+					</div>
 
 					<ons-list ng-controller="SPTEMasterController">
-						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter:nombre " ng-click="showSPTEDetail($index)">
+						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter:entradaSPTE " ng-click="showSPTEDetail($index)">
 							<ons-row>
 								<ons-col width="60px">
 									<div class="item-thum"></div>
@@ -314,9 +321,16 @@ under the License.
 							</ons-toolbar-button>
 						</div>
 					</ons-toolbar>
+					<div class="navigation-bar">
+						<div class="navigation-bar__center">
+
+							<input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Buscar" ng-model="entradaRecepcion">
+
+						</div>
+					</div>
 
 					<ons-list ng-controller="MasterController">
-						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
+						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter : entradaRecepcion" ng-click="showDetail($index)">
 							<ons-row>
 								<ons-col width="60px">
 									<div class="item-thum"></div>
@@ -437,10 +451,17 @@ under the License.
 							Ticket Tracker
 						</div>
 					</ons-toolbar>
+					<div class="navigation-bar">
+						<div class="navigation-bar__center">
+
+							<input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Buscar" ng-model="entradaTicket">
+
+						</div>
+					</div>
 					<ons-list ng-controller="TicketController">
 
 						<!--<div id="ticketbox"></div>-->
-						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showTicket($index)">
+						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter : entradaTicket" ng-click="showTicket($index)">
 							<ons-row>
 								<ons-col width="60px">
 									<div class="item-thum"></div>
@@ -881,7 +902,7 @@ under the License.
 					<div class="navigation-bar">
 						<div class="navigation-bar__center">
 
-							<input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Search">
+							<input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Buscar" ng-model="entrada">
 
 						</div>
 					</div>
@@ -890,7 +911,7 @@ under the License.
 						<ons-list-header class="person-list-header">
 							<!--{{data[char]}}-->
 						</ons-list-header>
-						<ons-list-item class="person" modifier="tappable" ng-repeat="i in data">
+						<ons-list-item class="person" modifier="tappable" ng-repeat="i in data | filter:entrada">
 							<ons-row>
 								<ons-col width="40px">
 									<img src="img/def.png" class="person-image">
