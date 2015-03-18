@@ -19,9 +19,9 @@ $(document).ready(function () {
   });
   
   module.controller('profileController', function($scope, $dataProfile, $http) {
-    $http.post('http://empowerlabs.com/proyectos/helpDesk/getUserData.php', { user : 'JoseRojas'}).
+    $http.get('http://empowerlabs.com/proyectos/helpDesk/getUserData.php?user='+user).
   success(function(data, status, headers, config) {
-  	$scope.ons.notification.alert({message: ""+data.firstname,title: "intellibanks"});
+  	//$scope.ons.notification.alert({message: ""+data.firstname,title: "intellibanks"});
     $dataProfile=data;
     Profile=data;
     $scope.data = $dataProfile;
@@ -111,6 +111,15 @@ $(document).ready(function () {
   
   module.controller('SPTEMasterController', function($scope, $dataSPTE, $http) {
   	//getTodos();
+  	
+			if (user === "nouser") {
+			//alert(""+user);
+						//window.location = "login.html";
+						//ons.notification.alert({message: ''+data.response, title:"App HelpDesk"});
+						logged="no"; menu.setMainPage('login2.html');
+					}
+					else{
+					}
     $scope.items = todosSPTE;  
     $http.get('http://empowerlabs.com/proyectos/helpDesk/todosSPTE.php').
   success(function(data, status, headers, config) {

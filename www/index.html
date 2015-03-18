@@ -43,7 +43,7 @@ under the License.
 
 		<style>
 			body {
-				background: #EAEDF3;
+				background: #66953C;
 			}
 			.item {
 				padding: 10px;
@@ -85,7 +85,7 @@ under the License.
 			}
 		</style>
 		<script type="text/javascript">
-			url = "http://empowerlabs.com/proyectos/helpDesk/loginTemplate.php";
+			/*url = "http://empowerlabs.com/proyectos/helpDesk/loginTemplate.php";
 			$.ajax({
 				type : 'GET',
 				url : url,
@@ -99,7 +99,7 @@ under the License.
 					}
 					//ons.notification.alert({message: ''+logged, title:"App HelpDesk"});
 				}
-			});
+			});*/
 		</script>
 
 	</head>
@@ -121,17 +121,17 @@ under the License.
 
 					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page1.html', {closeMenu: true})">
 						<ons-icon icon="ion-home custom-icon"></ons-icon>
-						Actos
+						<strong>Actos</strong>
 					</ons-list-item>
 
 					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page2.html', {closeMenu: true})">
 						<ons-icon icon="ion-home custom-icon"></ons-icon>
-						Recepción
+						<strong>Recepción</strong>
 					</ons-list-item>
 
 					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page3.html', {closeMenu: true})">
 						<ons-icon icon="ion-filing"></ons-icon>
-						Mesa de trabajo
+						<strong>Mesa de trabajo</strong> 
 					</ons-list-item>
 
 				</ons-list>
@@ -139,23 +139,27 @@ under the License.
 				<br>
 
 				<ons-list class="menu-list">
-					<ons-list-item class="menu-item custom-icon" ng-click="menu.setMainPage('page3.html', {closeMenu: true})">
+					<ons-list-item class="menu-item custom-icon" ng-click="menu.setMainPage('page4.html', {closeMenu: true})">
 						<ons-icon icon="ion-ios7-chatbubble"></ons-icon>
-						Mensajes
+						<strong>Mensajes</strong>
 					</ons-list-item>
 
-					<ons-list-item class="menu-item" ng-click="menu.setMainPage('page4.html', {closeMenu: true})">
+					<ons-list-item class="menu-item" ng-click="menu.setMainPage('page5.html', {closeMenu: true})">
 						<ons-icon icon="icon ion-android-settings"></ons-icon>
-						Configuración
+						<strong>Ajustes</strong>
 					</ons-list-item>
-					<ons-list-item class="menu-item" ng-click="menu.setMainPage('page4.html', {closeMenu: true})">
+					<ons-list-item class="menu-item" ng-click="menu.setMainPage('perfil.html', {closeMenu: true})">
+						<ons-icon icon="icon ion-android-social-user"></ons-icon>
+						<strong>Perfil</strong>
+					</ons-list-item>
+					<ons-list-item class="menu-item" ng-click="menu.setMainPage('page6.html', {closeMenu: true})">
 						<ons-icon icon="icon ion-help"></ons-icon>
-						Ayuda
+						<strong>Ayuda</strong>
 					</ons-list-item>
 
-					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page9.html', {closeMenu: true})">
+					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page7.html', {closeMenu: true})">
 						<ons-icon icon="icon ion-android-information"></ons-icon>
-						Acerca de
+						<strong>Acerca de</strong>
 					</ons-list-item>
 				</ons-list>
 			</ons-page>
@@ -177,7 +181,7 @@ under the License.
 
 						<div class="right">
 							<ons-toolbar-button ng-click="menu.toggle()">
-								<ons-icon icon="ion-ios7-search-strong custom-icon" size="28px" fixed-width="false"></ons-icon>
+								<ons-icon icon="ion-android-sort custom-icon" size="28px" fixed-width="false"></ons-icon>
 							</ons-toolbar-button>
 						</div>
 					</ons-toolbar>
@@ -672,88 +676,7 @@ under the License.
 
 					</ons-page>
 				</ons-template>
-				<ons-template id="perfil.html">
-					<ons-page ng-controller="profileController">
-						<div class="status-bar-div"></div>
-						<ons-toolbar>
-							<div class="left">
-								<ons-toolbar-button ng-click="menu.toggle()">
-									<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
-								</ons-toolbar-button>
-							</div>
-							<div class="center">
-								Perfil
-							</div>
-							<div class="right">
-								<ons-toolbar-button>
-									<ons-icon icon="ion-gear-a custom-icon" style="vertical-align: -4px; font-size: 28px;"></ons-icon>
-								</ons-toolbar-button>
-							</div>
-						</ons-toolbar>
-
-						<div class="profile-card">
-
-							<img src="images/profile-image-01.png" class="profile-image">
-							<div class="profile-name">
-								Alex Rojas
-							</div>
-							<div class="profile-id">
-								@JoseRojas 
-							</div>
-							<div class="profile-desc">
-								Ingeniero en Software y Músico
-							</div>
-
-						</div>
-
-						<ons-list>
-							<ons-list-item>
-								<ons-row>
-									<ons-col class="info-col">
-										<div class="info-num">
-											87
-										</div>
-										<div class="info-unit">
-											Comentarios
-										</div>
-									</ons-col>
-									<ons-col class="info-col">
-										<div class="info-num">
-											40
-										</div>
-										<div class="info-unit">
-											Siguiendo
-										</div>
-									</ons-col>
-									<ons-col class="info-col">
-										<div class="info-num">
-											38
-										</div>
-										<div class="info-unit">
-											Seguidores
-										</div>
-									</ons-col>
-								</ons-row>
-							</ons-list-item>
-						</ons-list>
-
-						<ons-list modifier="inset" style="margin-top: 10px">
-							<ons-list-item modifier="chevron">
-								Biografía
-							</ons-list-item>
-
-							<ons-list-item modifier="chevron">
-								Proyectos
-							</ons-list-item>
-
-							<ons-list-item modifier="chevron">
-								Ligas importantes
-							</ons-list-item>
-
-						</ons-list>
-						<br>
-					</ons-page>
-				</ons-template>
+				
 				<ons-template id="mensajes.html">
 					<ons-page>
 						<div class="status-bar-div"></div>
@@ -948,5 +871,87 @@ under the License.
 
 		</ons-page>
 </ons-template>
+<ons-template id="perfil.html">
+					<ons-page ng-controller="profileController">
+						<div class="status-bar-div"></div>
+						<ons-toolbar>
+							<div class="left">
+								<ons-toolbar-button ng-click="menu.toggle()">
+									<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
+								</ons-toolbar-button>
+							</div>
+							<div class="center">
+								Perfil
+							</div>
+							<div class="right">
+								<ons-toolbar-button>
+									<ons-icon icon="ion-gear-a custom-icon" style="vertical-align: -4px; font-size: 28px;"></ons-icon>
+								</ons-toolbar-button>
+							</div>
+						</ons-toolbar>
+
+						<div class="profile-card">
+
+							<img src="{{data.image}}" class="profile-image">
+							<div class="profile-name">
+								{{data.firstname}} {{data.lastname}}
+							</div>
+							<div class="profile-id">
+								{{data.user}} 
+							</div>
+							<div class="profile-desc">
+								{{data.titles}}
+							</div>
+
+						</div>
+
+						<ons-list>
+							<ons-list-item>
+								<ons-row>
+									<ons-col class="info-col">
+										<div class="info-num">
+											87
+										</div>
+										<div class="info-unit">
+											Comentarios
+										</div>
+									</ons-col>
+									<ons-col class="info-col">
+										<div class="info-num">
+											40
+										</div>
+										<div class="info-unit">
+											Siguiendo
+										</div>
+									</ons-col>
+									<ons-col class="info-col">
+										<div class="info-num">
+											38
+										</div>
+										<div class="info-unit">
+											Seguidores
+										</div>
+									</ons-col>
+								</ons-row>
+							</ons-list-item>
+						</ons-list>
+
+						<ons-list modifier="inset" style="margin-top: 10px">
+							<ons-list-item modifier="chevron">
+								Biografía
+							</ons-list-item>
+
+							<ons-list-item modifier="chevron">
+								Proyectos
+							</ons-list-item>
+
+							<ons-list-item modifier="chevron">
+								Ligas importantes
+							</ons-list-item>
+
+						</ons-list>
+						<br>
+					</ons-page>
+				</ons-template>
 	</body>
 </html>

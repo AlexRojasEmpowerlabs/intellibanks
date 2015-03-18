@@ -1,4 +1,4 @@
-
+user="nouser";
 		function send(){
 			url= "http://empowerlabs.com/proyectos/helpDesk/login.php";
   	$.ajax({
