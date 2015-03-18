@@ -38,8 +38,8 @@ under the License.
 		<script src="js/jquery.js"></script>
 
 		<script src="js/app.js"></script>
-		<script src="js/index.js"> </script>
-		<script src="js/login.js"> </script>
+		<script src="js/index.js"></script>
+		<script src="js/login.js"></script>
 
 		<style>
 			body {
@@ -86,20 +86,20 @@ under the License.
 		</style>
 		<script type="text/javascript">
 			/*url = "http://empowerlabs.com/proyectos/helpDesk/loginTemplate.php";
-			$.ajax({
-				type : 'GET',
-				url : url,
-				success : function(data) {
-					if (data.response !== "ok") {
-						//window.location = "login.html";
-						//ons.notification.alert({message: ''+data.response, title:"App HelpDesk"});
-						logged="no"; menu.setMainPage('login2.html');
-					}
-					else{
-					}
-					//ons.notification.alert({message: ''+logged, title:"App HelpDesk"});
-				}
-			});*/
+			 $.ajax({
+			 type : 'GET',
+			 url : url,
+			 success : function(data) {
+			 if (data.response !== "ok") {
+			 //window.location = "login.html";
+			 //ons.notification.alert({message: ''+data.response, title:"App HelpDesk"});
+			 logged="no"; menu.setMainPage('login2.html');
+			 }
+			 else{
+			 }
+			 //ons.notification.alert({message: ''+logged, title:"App HelpDesk"});
+			 }
+			 });*/
 		</script>
 
 	</head>
@@ -131,7 +131,7 @@ under the License.
 
 					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page3.html', {closeMenu: true})">
 						<ons-icon icon="ion-filing"></ons-icon>
-						<strong>Mesa de trabajo</strong> 
+						<strong>Mesa de trabajo</strong>
 					</ons-list-item>
 
 				</ons-list>
@@ -242,7 +242,7 @@ under the License.
 
 					<ons-list-item modifier="chevron" ng-click="doSomething()">
 						<ons-icon icon="ion-star" fixed-width="true" style="color: #ccc"></ons-icon>
-						Marcar como favorito 
+						Marcar como favorito
 					</ons-list-item>
 				</ons-list>
 
@@ -631,102 +631,6 @@ under the License.
 					</ons-tab>
 				</ons-tabbar>
 
-				<ons-template id="people.html">
-					<ons-page>
-						<div class="status-bar-div"></div>
-						<ons-toolbar>
-							<div class="left">
-								<ons-toolbar-button ng-click="menu.toggle()">
-									<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
-								</ons-toolbar-button>
-							</div>
-							<div class="center">
-								Colaboradores
-							</div>
-							<div class="right">
-								<ons-toolbar-button>
-									<ons-icon icon="ion-plus" fixed-width="false" style="vertical-align: -4px;"></ons-icon>
-								</ons-toolbar-button>
-							</div>
-						</ons-toolbar>
-
-						<div class="navigation-bar">
-							<div class="navigation-bar__center">
-
-								<input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Search">
-
-							</div>
-						</div>
-
-						<ons-list class="person-list" ng-repeat="char in ['A', 'B', 'C', 'D', 'E']">
-							<ons-list-header class="person-list-header">
-								{{char}}
-							</ons-list-header>
-							<ons-list-item class="person" modifier="tappable" ng-repeat="i in [1,2,3,4,5]">
-								<ons-row>
-									<ons-col width="40px">
-										<img src="images/profile-image-0{{i}}.png" class="person-image">
-									</ons-col>
-									<ons-col class="person-name">
-										Alex Rojas
-									</ons-col>
-								</ons-row>
-							</ons-list-item>
-						</ons-list>
-
-					</ons-page>
-				</ons-template>
-				
-				<ons-template id="mensajes.html">
-					<ons-page>
-						<div class="status-bar-div"></div>
-						<ons-toolbar>
-							<div class="right">
-								<ons-toolbar-button>
-									Cancelar
-								</ons-toolbar-button>
-							</div>
-							<div class="center">
-								Nuevo Mensaje
-							</div>
-						</ons-toolbar>
-
-						<ons-list modifier="inset" style="margin-top: 10px">
-							<ons-list-item class="to-wrapper">
-								<ons-row>
-									<ons-col width="52px">
-										<img src="images/profile-image-02.png" width="42" class="to-image">
-									</ons-col>
-									<ons-col>
-										<div class="to-name">
-											Leonel
-										</div>
-										<div class="to-email">
-											@leonelRosales
-										</div>
-									</ons-col>
-								</ons-row>
-							</ons-list-item>
-							<ons-list-item>
-								<input type="text" class="text-input text-input--transparent" placeholder="Nombre" style="width: 100%">
-							</ons-list-item>
-
-							<ons-list-item>
-								<textarea name="textarea" class="textarea textarea--transparent" style="width: 100%; height: 100px;" placeholder="Mensaje"></textarea>
-							</ons-list-item>
-
-							<ons-list-item modifier="chevron">
-								<ons-icon icon="fa-tag" style="opacity:0.2"></ons-icon>
-							</ons-list-item>
-						</ons-list>
-
-						<div style="padding: 10px 9px">
-							<ons-button modifier="large" style="margin: 0 auto;">
-								Enviar
-							</ons-button>
-						</div>
-					</ons-page>
-				</ons-template>
 			</ons-navigator>
 		</ons-template>
 		<ons-template id="page5.html">
@@ -846,112 +750,209 @@ under the License.
 			</ons-page>
 		</ons-template>
 		<ons-template id="login2.html">
-  <ons-page>
-			<ons-toolbar>
-				<div class="center">
-					Log In
+			<ons-page>
+				<ons-toolbar>
+					<div class="center">
+						Log In
+					</div>
+				</ons-toolbar>
+
+				<div class="login-form">
+					<div class="center">
+						<form id="logueo">
+							<input id="user" type="email" class="text-input--underbar" placeholder="Usuario" value="" name="user" />
+							<br>
+							<input type="password" class="text-input--underbar" placeholder="Contraseña" value="" name="pass" />
+							<br>
+							<br>
+							<ons-button modifier="large" class="login-button" onclick="send();">
+								Log In
+							</ons-button>
+							<br>
+						</form>
+					</div>
+
 				</div>
-			</ons-toolbar>
 
-			<div class="login-form">
-				<div class="center">
-					<form id="logueo">
-				<input id="user" type="email" class="text-input--underbar" placeholder="Usuario" value="" name="user" /><br>
-				<input type="password" class="text-input--underbar" placeholder="Contraseña" value="" name="pass" />
+			</ons-page>
+		</ons-template>
+		<ons-template id="perfil.html">
+			<ons-page ng-controller="profileController">
+				<div class="status-bar-div"></div>
+				<ons-toolbar>
+					<div class="left">
+						<ons-toolbar-button ng-click="menu.toggle()">
+							<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
+						</ons-toolbar-button>
+					</div>
+					<div class="center">
+						Perfil
+					</div>
+					<div class="right">
+						<ons-toolbar-button>
+							<ons-icon icon="ion-gear-a custom-icon" style="vertical-align: -4px; font-size: 28px;"></ons-icon>
+						</ons-toolbar-button>
+					</div>
+				</ons-toolbar>
+
+				<div class="profile-card">
+
+					<img src="{{data.image}}" class="profile-image">
+					<div class="profile-name">
+						{{data.firstname}} {{data.lastname}}
+					</div>
+					<div class="profile-id">
+						{{data.user}}
+					</div>
+					<div class="profile-desc">
+						{{data.titles}}
+					</div>
+
+				</div>
+
+				<ons-list>
+					<ons-list-item>
+						<ons-row>
+							<ons-col class="info-col">
+								<div class="info-num">
+									87
+								</div>
+								<div class="info-unit">
+									Comentarios
+								</div>
+							</ons-col>
+							<ons-col class="info-col">
+								<div class="info-num">
+									40
+								</div>
+								<div class="info-unit">
+									Siguiendo
+								</div>
+							</ons-col>
+							<ons-col class="info-col">
+								<div class="info-num">
+									38
+								</div>
+								<div class="info-unit">
+									Seguidores
+								</div>
+							</ons-col>
+						</ons-row>
+					</ons-list-item>
+				</ons-list>
+
+				<ons-list modifier="inset" style="margin-top: 10px">
+					<ons-list-item modifier="chevron">
+						Biografía
+					</ons-list-item>
+
+					<ons-list-item modifier="chevron">
+						Proyectos
+					</ons-list-item>
+
+					<ons-list-item modifier="chevron">
+						Ligas importantes
+					</ons-list-item>
+
+				</ons-list>
 				<br>
-				<br>
-				<ons-button modifier="large" class="login-button" onclick="send();">
-					Log In
-				</ons-button>
-				<br>
-				</form></div>
+			</ons-page>
+		</ons-template>
+		<ons-template id="people.html">
+			<ons-page ng-controller="peopleController">
+				<div class="status-bar-div"></div>
+				<ons-toolbar>
+					<div class="left">
+						<ons-toolbar-button ng-click="menu.toggle()">
+							<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
+						</ons-toolbar-button>
+					</div>
+					<div class="center">
+						Colaboradores
+					</div>
+					<div class="right">
+						<ons-toolbar-button>
+							<ons-icon icon="ion-plus" fixed-width="false" style="vertical-align: -4px;"></ons-icon>
+						</ons-toolbar-button>
+					</div>
+				</ons-toolbar>
 
-				
-			</div>
+				<div class="navigation-bar">
+					<div class="navigation-bar__center">
 
-		</ons-page>
-</ons-template>
-<ons-template id="perfil.html">
-					<ons-page ng-controller="profileController">
-						<div class="status-bar-div"></div>
-						<ons-toolbar>
-							<div class="left">
-								<ons-toolbar-button ng-click="menu.toggle()">
-									<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
-								</ons-toolbar-button>
-							</div>
-							<div class="center">
-								Perfil
-							</div>
-							<div class="right">
-								<ons-toolbar-button>
-									<ons-icon icon="ion-gear-a custom-icon" style="vertical-align: -4px; font-size: 28px;"></ons-icon>
-								</ons-toolbar-button>
-							</div>
-						</ons-toolbar>
+						<input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Search">
 
-						<div class="profile-card">
+					</div>
+				</div>
 
-							<img src="{{data.image}}" class="profile-image">
-							<div class="profile-name">
-								{{data.firstname}} {{data.lastname}}
-							</div>
-							<div class="profile-id">
-								{{data.user}} 
-							</div>
-							<div class="profile-desc">
-								{{data.titles}}
-							</div>
+				<ons-list class="person-list">
+					<ons-list-header class="person-list-header">
+						<!--{{data[char]}}-->
+					</ons-list-header>
+					<ons-list-item class="person" modifier="tappable" ng-repeat="i in data">
+						<ons-row>
+							<ons-col width="40px">
+								<img src="img/def.png" class="person-image">
+							</ons-col>
+							<ons-col class="person-name">
+								{{i}}
+							</ons-col>
+						</ons-row>
+					</ons-list-item>
+				</ons-list>
 
-						</div>
+			</ons-page>
+		</ons-template>
 
-						<ons-list>
-							<ons-list-item>
-								<ons-row>
-									<ons-col class="info-col">
-										<div class="info-num">
-											87
-										</div>
-										<div class="info-unit">
-											Comentarios
-										</div>
-									</ons-col>
-									<ons-col class="info-col">
-										<div class="info-num">
-											40
-										</div>
-										<div class="info-unit">
-											Siguiendo
-										</div>
-									</ons-col>
-									<ons-col class="info-col">
-										<div class="info-num">
-											38
-										</div>
-										<div class="info-unit">
-											Seguidores
-										</div>
-									</ons-col>
-								</ons-row>
-							</ons-list-item>
-						</ons-list>
+		<ons-template id="mensajes.html">
+			<ons-page>
+				<div class="status-bar-div"></div>
+				<ons-toolbar>
+					<div class="right">
+						<ons-toolbar-button>
+							Cancelar
+						</ons-toolbar-button>
+					</div>
+					<div class="center">
+						Nuevo Mensaje
+					</div>
+				</ons-toolbar>
 
-						<ons-list modifier="inset" style="margin-top: 10px">
-							<ons-list-item modifier="chevron">
-								Biografía
-							</ons-list-item>
+				<ons-list modifier="inset" style="margin-top: 10px">
+					<ons-list-item class="to-wrapper">
+						<ons-row>
+							<ons-col width="52px">
+								<img src="images/profile-image-02.png" width="42" class="to-image">
+							</ons-col>
+							<ons-col>
+								<div class="to-name">
+									Leonel
+								</div>
+								<div class="to-email">
+									@leonelRosales
+								</div>
+							</ons-col>
+						</ons-row>
+					</ons-list-item>
+					<ons-list-item>
+						<input type="text" class="text-input text-input--transparent" placeholder="Nombre" style="width: 100%">
+					</ons-list-item>
 
-							<ons-list-item modifier="chevron">
-								Proyectos
-							</ons-list-item>
+					<ons-list-item>
+						<textarea name="textarea" class="textarea textarea--transparent" style="width: 100%; height: 100px;" placeholder="Mensaje"></textarea>
+					</ons-list-item>
 
-							<ons-list-item modifier="chevron">
-								Ligas importantes
-							</ons-list-item>
+					<ons-list-item modifier="chevron">
+						<ons-icon icon="fa-tag" style="opacity:0.2"></ons-icon>
+					</ons-list-item>
+				</ons-list>
 
-						</ons-list>
-						<br>
-					</ons-page>
-				</ons-template>
+				<div style="padding: 10px 9px">
+					<ons-button modifier="large" style="margin: 0 auto;">
+						Enviar
+					</ons-button>
+				</div>
+			</ons-page>
+		</ons-template>
 	</body>
 </html>

@@ -4,6 +4,7 @@ var todosCall={};
 var todosSPTE={};
 var userInfo={};
 var Profile="[]";
+var People="[]";
   var module = ons.bootstrap('my-app', ['onsen']);
 $(document).ready(function () {
 	
@@ -16,6 +17,25 @@ $(document).ready(function () {
         alert('Disponible en breve '+user);
       }, 100);
     };
+  });
+  
+   module.controller('peopleController', function($scope, $dataPeople, $http) {
+    $http.get('http://empowerlabs.com/proyectos/helpDesk/getUsers.php').
+  success(function(data, status, headers, config) {
+  	//$scope.ons.notification.alert({message: ""+data.firstname,title: "intellibanks"});
+    $dataPeople=data;
+    People=data;
+    $scope.data = $dataPeople;
+  }).
+  error(function(data, status, headers, config) {
+  	
+  });
+  });
+   module.factory('$dataPeople', function() {
+      var dataPeople;
+      		dataPeople=People;
+      
+      return dataPeople;
   });
   
   module.controller('profileController', function($scope, $dataProfile, $http) {
