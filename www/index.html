@@ -106,8 +106,8 @@ under the License.
 	<body>
 	<body ng-controller="AppController">
 		<ons-sliding-menu
-		menu-page="menu.html" main-page="page1.html" side="left"
-		var="menu" type="reveal" max-slide-distance="260px" swipable="false"></ons-sliding-menu>
+		menu-page="menu.html" main-page="page1.html" swipeable="false" draggable="false" side="left"
+		var="menu" type="reveal" max-slide-distance="260px"></ons-sliding-menu>
 
 		<ons-template id="menu.html">
 			<ons-page modifier="menu-page">
@@ -152,7 +152,7 @@ under the License.
 						<ons-icon icon="icon ion-android-social-user"></ons-icon>
 						<strong>Perfil</strong>
 					</ons-list-item>
-					<ons-list-item class="menu-item" ng-click="menu.setMainPage('page6.html', {closeMenu: true})">
+					<ons-list-item class="menu-item" ng-click="menu.setMainPage('ayuda.html', {closeMenu: true})">
 						<ons-icon icon="icon ion-help"></ons-icon>
 						<strong>Ayuda</strong>
 					</ons-list-item>
@@ -180,7 +180,7 @@ under the License.
 						</div>
 
 						<div class="right">
-							<ons-toolbar-button ng-click="menu.toggle()">
+							<ons-toolbar-button ng-click="menu.setMainPage('calendar.html', {closeMenu: true})">
 								<ons-icon icon="ion-android-sort custom-icon" size="28px" fixed-width="false"></ons-icon>
 							</ons-toolbar-button>
 						</div>
@@ -639,7 +639,8 @@ under the License.
 		<ons-template id="page4.html">
 			<ons-navigator animation="slide">
 				<ons-tabbar>
-					<ons-tab><!-- page="mensajes.html"-->
+					<ons-tab>
+						<!-- page="mensajes.html"-->
 						<ons-icon icon="ion-ios7-chatboxes" class="tab-icon"></ons-icon><span class="tab-label">Chats</span>
 					</ons-tab>
 
@@ -976,6 +977,70 @@ under the License.
 					</ons-button>
 				</div>
 			</ons-page>
+		</ons-template>
+		<ons-template id="ayuda.html">
+			<ons-page>
+				<div class="status-bar-div"></div>
+				<ons-toolbar>
+					<div class="left">
+						<ons-toolbar-button ng-click="menu.toggle()">
+							<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
+						</ons-toolbar-button>
+					</div>
+					<div class="center">
+						Ayuda
+					</div>
+				</ons-toolbar>
+				<ons-carousel swipeable overscrollable auto-scroll fullscreen var="carousel">
+					<ons-carousel-item style="background-color: gray;">
+						<div class="item-label"><img src="img/ayuda/Imagen1.png" width="100%" height="80%">
+						</div>
+						<h2 style="color: #FFFFFF; text-align: center;">Login</h2>
+					</ons-carousel-item>
+					<ons-carousel-item style="background-color: #373B44;">
+						<div class="item-label"><img src="img/ayuda/Imagen2.png" width="100%" height="80%">
+						</div>
+						<h2 style="color: #FFFFFF; text-align: center;">Actos</h2>
+					</ons-carousel-item>
+					<ons-carousel-item style="background-color: #085078;">
+						<div class="item-label"><img src="img/ayuda/Imagen3.png" width="100%" height="80%">
+						</div>
+						<h2 style="color: #FFFFFF; text-align: center;">Filtrado de elementos</h2>
+					</ons-carousel-item>
+					<ons-carousel-item style="background-color: orange;">
+						<div><img src="img/ayuda/Imagen4.png" width="100%" height="80%">
+						</div>
+						<h2 style="color: #FFFFFF; text-align: center;">Elemento individual</h2>
+					</ons-carousel-item>
+					<ons-carousel-cover>
+						<div style="text-align: center; position: absolute; left: 0px; width: 100%; bottom: 10px; color: white;">
+							Desliza a la derecha o izquierda
+						</div>
+					</ons-carousel-cover>
+				</ons-carousel>
+			</ons-page>
+		</ons-template>
+
+		<ons-modal var="modal">
+			<ons-icon icon="ion-loading-c" spin="true"></ons-icon>
+			<br>
+			Cargando informacion, por favor espere ... 
+		</ons-modal>
+		
+		<ons-template id="calendar.html">
+		<ons-page>
+		<ons-toolbar>
+					<div class="left">
+						<ons-toolbar-button ng-click="menu.toggle()">
+							<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
+						</ons-toolbar-button>
+					</div>
+					<div class="center">
+						Calendario
+					</div>
+				</ons-toolbar>
+				
+		</ons-page>
 		</ons-template>
 	</body>
 </html>
