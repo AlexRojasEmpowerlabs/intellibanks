@@ -6,6 +6,7 @@ var userInfo={};
 var Profile="[]";
 var People="[]";
 var selectedUser="";
+var fecha="no";
   var module = ons.bootstrap('my-app', ['onsen']);
 $(document).ready(function () {
 	
@@ -63,6 +64,19 @@ $(document).ready(function () {
       		dataProfile=Profile;
       
       return dataProfile;
+  });
+  
+  module.controller('CalendarController', function($scope, $data) {
+    $scope.verFecha=function(){
+      $scope.ons.navigator.pushPage('dia.html');
+    //$scope.ons.notification.alert({message: ""+fecha,title: "intellibanks"});
+      };
+    
+  });
+  
+  module.controller('SelectedFechaController', function($scope, $data) {
+    $scope.fecha=fecha;
+    
   });
 
   module.controller('DetailController', function($scope, $data) {

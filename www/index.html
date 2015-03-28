@@ -101,7 +101,12 @@ under the License.
 			 }
 			 });*/
 		</script>
-
+		
+		<!--Calendar-->
+		<script type="text/javascript" src="js/script.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		
 	</head>
 	<body>
 	<body ng-controller="AppController">
@@ -181,7 +186,7 @@ under the License.
 
 						<div class="right">
 							<ons-toolbar-button ng-click="menu.setMainPage('calendar.html', {closeMenu: true})">
-								<ons-icon icon="ion-android-sort custom-icon" size="28px" fixed-width="false"></ons-icon>
+								<ons-icon icon="ion-ios7-calendar custom-icon" size="28px" fixed-width="false"></ons-icon>
 							</ons-toolbar-button>
 						</div>
 					</ons-toolbar>
@@ -1024,12 +1029,13 @@ under the License.
 		<ons-modal var="modal">
 			<ons-icon icon="ion-loading-c" spin="true"></ons-icon>
 			<br>
-			Cargando informacion, por favor espere ... 
+			Cargando informacion, por favor espere ...
 		</ons-modal>
-		
+
 		<ons-template id="calendar.html">
-		<ons-page>
-		<ons-toolbar>
+			<ons-navigator animation="lift">
+			<ons-page>
+				<ons-toolbar>
 					<div class="left">
 						<ons-toolbar-button ng-click="menu.toggle()">
 							<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
@@ -1039,8 +1045,41 @@ under the License.
 						Calendario
 					</div>
 				</ons-toolbar>
-				
-		</ons-page>
+				<div class="container" ng-controller="CalendarController">
+					<div class="controls">
+						<p class="next label" onclick="nextMonth()">
+							<i class="fa fa-arrow-right"></i>
+						</p>
+						<p class="previous label" onclick="previousMonth()">
+							<i class="fa fa-arrow-left"></i>
+						</p>
+						<p id="current-month" class="label bold">
+							Enero
+						</p>
+					</div>
+
+					<div class="calendar" id="calendar" ng-click="verFecha()">
+						<!-- Calandar HTML output here -->
+					</div>
+				</div>
+			</ons-page>
+			</ons-navigator>
+		</ons-template>
+		<ons-template id="dia.html">
+			<ons-page ng-controller="SelectedFechaController">
+				<div class="status-bar-div"></div>
+				<ons-toolbar>
+					<div class="left">
+						<ons-back-button>
+							Regresar
+						</ons-back-button>
+					</div>
+					<div class="center">
+						{{fecha}}
+					</div>
+				</ons-toolbar>
+
+			</ons-page>
 		</ons-template>
 	</body>
 </html>
