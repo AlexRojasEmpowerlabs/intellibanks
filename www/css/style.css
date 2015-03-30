@@ -23,7 +23,7 @@
     text-align: center;
     display: inline-block;
     cursor: pointer;
-    border: solid 1px #fff;
+    border: solid 1px #CCCCCC;
 }
 .calendar-day:hover {
     background: #eee;

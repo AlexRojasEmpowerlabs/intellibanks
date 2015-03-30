@@ -141,3 +141,9 @@
       color: #999;
       float: right;
     }
+    .imagen-carrusel{
+    	background-color: #FFFFFF;
+    	width: 96%;
+    	height: auto;
+    	padding: 2%;
+    }
