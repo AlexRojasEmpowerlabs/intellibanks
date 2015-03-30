@@ -1,24 +1,7 @@
 // Globally head date object for the month shown
 var date = new Date();
 date.setDate(1);
-date.setMonth(0);
-
-window.onload = function() {
-    // Add the current month on load
-    createMonth();
-};
-
-document.onkeydown = function(evt) {
-    evt = evt || window.event;
-    switch (evt.keyCode) {
-        case 37:
-            previousMonth();
-            break;
-        case 39:
-            nextMonth();
-            break;
-    }
-};
+date.setMonth(date.getMonth());
 
 // Converts day ids to the relevant string
 function dayOfWeekAsString(dayIndex) {

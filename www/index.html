@@ -199,7 +199,7 @@ under the License.
 					</div>
 
 					<ons-list ng-controller="SPTEMasterController">
-						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter:entradaSPTE " ng-click="showSPTEDetail($index)">
+						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter:entradaSPTE " ng-click="showSPTEDetail(item)">
 							<ons-row>
 								<ons-col width="60px">
 									<div class="item-thum"></div>
@@ -335,7 +335,7 @@ under the License.
 					</div>
 
 					<ons-list ng-controller="MasterController">
-						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter : entradaRecepcion" ng-click="showDetail($index)">
+						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter : entradaRecepcion" ng-click="showDetail(item)">
 							<ons-row>
 								<ons-col width="60px">
 									<div class="item-thum"></div>
@@ -466,7 +466,7 @@ under the License.
 					<ons-list ng-controller="TicketController">
 
 						<!--<div id="ticketbox"></div>-->
-						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter : entradaTicket" ng-click="showTicket($index)">
+						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter : entradaTicket" ng-click="showTicket(item)">
 							<ons-row>
 								<ons-col width="60px">
 									<div class="item-thum"></div>

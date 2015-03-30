@@ -67,6 +67,7 @@ $(document).ready(function () {
   });
   
   module.controller('CalendarController', function($scope, $data) {
+  	 createMonth();
     $scope.verFecha=function(){
       $scope.ons.navigator.pushPage('dia.html');
     //$scope.ons.notification.alert({message: ""+fecha,title: "intellibanks"});
@@ -102,8 +103,8 @@ $(document).ready(function () {
     $data.items=data;
     todosCall=data;
     $scope.items = $data.items;  
-    $scope.showDetail = function(index) {
-      var selectedItem = $data.items[index];
+    $scope.showDetail = function(item) {
+      var selectedItem = item;
       $data.selectedItem = selectedItem;
       $scope.ons.navigator.pushPage('detail.html', {title : selectedItem.title});
     };
@@ -132,8 +133,8 @@ $(document).ready(function () {
     todos=data;
     $scope.items = $dataTickets.items;  
     
-    $scope.showTicket = function(index) {
-      var selectedItem = $dataTickets.items[index];
+    $scope.showTicket = function(item) {
+      var selectedItem = item;
       $dataTickets.selectedItem = selectedItem;
       $scope.ons.navigator.pushPage('ticketOne.html', {title : selectedItem.id});
     };
@@ -170,8 +171,8 @@ $(document).ready(function () {
     $dataSPTE.items=data;
     todosSPTE=data;
     $scope.items = $dataSPTE.items;  
-    $scope.showSPTEDetail = function(index) {
-      var selectedItem = $dataSPTE.items[index];
+    $scope.showSPTEDetail = function(item) {
+      var selectedItem = item;
       $dataSPTE.selectedItem = selectedItem;
       $scope.ons.navigator.pushPage('detailSPTE.html', {title : selectedItem.id});
     };
