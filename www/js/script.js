@@ -27,7 +27,59 @@ function createCalendarDay(num, day, mon, year) {
 
     // Set ID of element as date formatted "8-January" etc 
     newDay.id = num + "-" + mon + "-" +year;
-    newDay.onclick=function(){fecha=mon+"-"+num;};
+   var indice=0;
+   if(num<10){
+   	num="0"+num;
+   }
+    	if(mon==="Enero"){
+    		indice="01";
+    		}
+    		
+    	if(mon==="Febrero"){
+    		indice="02";
+    		}
+    		
+    	if(mon==="Marzo"){
+    		indice="03";
+    		}
+    		
+    	if(mon==="Abril"){
+    		indice="04";
+    		}
+    		
+    	if(mon==="Mayo"){
+    		indice="05";
+    		}
+    		
+    	if(mon==="Junio"){
+    		indice="06";
+    		}
+    		
+    	if(mon==="Julio"){
+    		indice="07";
+    		}
+    		
+    	if(mon==="Agosto"){
+    		indice="08";
+    		}
+    		
+    	if(mon==="Septiembre"){
+    		indice="09";
+    		}
+    		
+    	if(mon==="Octubre"){
+    		indice="10";
+    		}
+    		
+    	if(mon==="Noviembre"){
+    		indice="11";
+    		}
+    		
+    	if(mon==="Diciembre"){
+    		indice="12";
+    		}
+    		
+    newDay.onclick=function(){fecha={"year":year,"mes":mon,"dia":num,"indice":indice};};
 
     newDay.appendChild(date);
     newDay.appendChild(dayElement);

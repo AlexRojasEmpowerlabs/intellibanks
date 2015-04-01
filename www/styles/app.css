@@ -149,7 +149,7 @@
      /*color: #2C5278;*/
     	color: #FFFFFF;
      background-color: #66953C;
-     margin-top: 20px;
+     padding-top: 10px;
     }
     ons-page{
     	/*margin-top: 20px;*/
@@ -159,5 +159,5 @@
     }
     .status-bar-div{
     	margin-top: 0px;
-    	height: 20px;
+    	height: 10px;
     	width: 100%;  }

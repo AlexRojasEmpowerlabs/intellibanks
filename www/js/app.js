@@ -77,7 +77,6 @@ $(document).ready(function () {
   
   module.controller('SelectedFechaController', function($scope, $data) {
     $scope.fecha=fecha;
-    
   });
 
   module.controller('DetailController', function($scope, $data) {
@@ -163,6 +162,8 @@ $(document).ready(function () {
 					}
 					else{
 					}
+					$scope.fecha=fecha;
+					$scope.finalFecha=fecha.year+'-'+fecha.indice+'-'+fecha.dia;
     $scope.items = todosSPTE;  
     $http.get('http://empowerlabs.com/proyectos/helpDesk/todosSPTE.php').
   success(function(data, status, headers, config) {
