@@ -143,13 +143,16 @@
       color: #999;
       float: right;
     }
-    ons-tab ,ons-toolbar .center, .left, .right{
+    ons-toolbar {
+    	padding-top: 20px;
+     background-color: #66953C;
+    }
+    .center, .left, .right{
     	/*color: #FFFFFF;
       background-color: #2c5278;*/
      /*color: #2C5278;*/
     	color: #FFFFFF;
      background-color: #66953C;
-     padding-top: 20px;
     }
     ons-page{
     	/*margin-top: 20px;*/
@@ -158,6 +161,7 @@
     	color: #FFFFFF;
     }
     .status-bar-div{
+     background-color: #66953C;
     	margin-top: 0px;
     	height: 20px;
     	width: 100%;  }

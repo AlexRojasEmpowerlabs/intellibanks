@@ -109,6 +109,7 @@ under the License.
 	</head>
 	<body>
 	<body ng-controller="AppController">
+		
 		<ons-sliding-menu
 		menu-page="menu.html" main-page="page1.html" swipeable="false" draggable="false" side="left"
 		var="menu" type="reveal" max-slide-distance="260px"></ons-sliding-menu>
@@ -172,7 +173,6 @@ under the License.
 		<ons-template id="page1.html">
 			<ons-navigator animation="slide" var="app.navi">
 				<ons-page>
-					<div class="status-bar-div"></div>
 					<ons-toolbar>
 						<div class="left">
 							<ons-toolbar-button ng-click="menu.toggle()">
@@ -221,7 +221,6 @@ under the License.
 		<ons-template id="detailSPTE.html">
 			<ons-page ng-controller="SPTEDetailController">
 
-				<div class="status-bar-div"></div>
 				<ons-toolbar>
 					<div class="left">
 						<ons-back-button>
@@ -308,7 +307,6 @@ under the License.
 		<ons-template id="page2.html">
 			<ons-navigator animation="slide" var="app.navi">
 				<ons-page>
-					<div class="status-bar-div"></div>
 					<ons-toolbar>
 						<div class="left">
 							<ons-toolbar-button ng-click="menu.toggle()">
@@ -439,7 +437,6 @@ under the License.
 
 				<ons-template id="home.html">
 
-					<div class="status-bar-div"></div>
 					<ons-toolbar>
 						<div class="left">
 							<ons-toolbar-button ng-click="menu.toggle()">
@@ -503,7 +500,6 @@ under the License.
 				</ons-template>
 
 				<ons-template id="settings.html">
-					<div class="status-bar-div"></div>
 					<ons-toolbar>
 						<div class="left">
 							<ons-toolbar-button ng-click="menu.toggle()">
@@ -575,7 +571,6 @@ under the License.
 				<ons-template id="ticketOne.html">
 					<ons-page ng-controller="TicketOneController">
 
-						<div class="status-bar-div"></div>
 						<ons-toolbar>
 							<div class="left">
 								<ons-back-button  ng-click="menu.setMainPage('page3.html')">
@@ -661,7 +656,6 @@ under the License.
 		</ons-template>
 		<ons-template id="page5.html">
 			<ons-navigator animation="slide" var="app.navi">
-				<div class="status-bar-div"></div>
 				<ons-toolbar>
 					<div class="left">
 						<ons-toolbar-button ng-click="menu.toggle()">
@@ -732,7 +726,6 @@ under the License.
 		</ons-template>
 		<ons-template id="newTicket.html">
 			<ons-page>
-				<div class="status-bar-div"></div>
 				<ons-toolbar>
 					<div class="left">
 						<ons-back-button>
@@ -804,7 +797,6 @@ under the License.
 		</ons-template>
 		<ons-template id="perfil.html">
 			<ons-page ng-controller="profileController">
-				<div class="status-bar-div"></div>
 				<ons-toolbar>
 					<div class="left">
 						<ons-toolbar-button ng-click="menu.toggle()">
@@ -907,7 +899,6 @@ under the License.
 		<ons-template id="people.html">
 			<ons-navigator animation="lift">
 				<ons-page ng-controller="peopleController">
-					<div class="status-bar-div"></div>
 					<ons-toolbar>
 						<div class="left">
 							<ons-toolbar-button ng-click="menu.toggle()">
@@ -954,7 +945,6 @@ under the License.
 
 		<ons-template id="mensajes.html">
 			<ons-page ng-controller="newMessageController">
-				<div class="status-bar-div"></div>
 				<ons-toolbar>
 					<div class="left">
 						<ons-back-button>
@@ -1004,7 +994,6 @@ under the License.
 		</ons-template>
 		<ons-template id="ayuda.html">
 			<ons-page>
-				<div class="status-bar-div"></div>
 				<ons-toolbar>
 					<div class="left">
 						<ons-toolbar-button ng-click="menu.toggle()">
@@ -1086,7 +1075,6 @@ under the License.
 		</ons-template>
 		<ons-template id="dia.html">
 			<ons-page ng-controller="SelectedFechaController">
-				<div class="status-bar-div"></div>
 				<ons-toolbar>
 					<div class="left">
 						<ons-back-button>
