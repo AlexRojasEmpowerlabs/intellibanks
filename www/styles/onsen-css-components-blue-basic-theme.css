@@ -550,10 +550,9 @@ h6 {
   min-width: 10px;
 }
 .navigation-bar--android__center {
-  float: left;
-  text-align: left;
+  text-align: center;
   width: auto;
-  max-width: 50%;
+  max-width: 100%;
 }
 .navigation-bar--android__right {
   float: right;
@@ -561,7 +560,6 @@ h6 {
   width: auto;
 }
 .navigation-bar--android__center:first-child:last-child {
-  padding-left: 10px;
 }
 /* topdoc
   name: Android-like Navigation Bar(2)
