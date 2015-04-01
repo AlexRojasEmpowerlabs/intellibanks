@@ -380,7 +380,7 @@ h6 {
   margin: 0;
   font: inherit;
   color: inherit;
-  background: transparent;
+  background: #66953C;
   border: none;
   line-height: normal;
   cursor: default;
@@ -422,7 +422,7 @@ h6 {
   padding-top: 0;
 }
 .navigation-bar__bg {
-  background: #fff;
+  background: #66953C;
 }
 .navigation-bar__item,
 .navigation-bar__left,
