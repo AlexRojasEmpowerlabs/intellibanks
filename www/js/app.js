@@ -27,6 +27,10 @@ $(document).ready(function () {
     //$scope.ons.notification.alert({message: ""+misDatos.url,title: "intellibanks"});
     $scope.url = misDatos.url;
   });
+  module.controller('AudioController', function($scope) {
+    //$scope.ons.notification.alert({message: ""+misDatos.url,title: "intellibanks"});
+    $scope.url = misDatos.url;
+  });
 
   module.controller('MicroController', function($scope, $dataMicro,$http) {
     $scope.item = $dataMicro.item;  
@@ -40,7 +44,7 @@ $(document).ready(function () {
     	$scope.ons.navigator.pushPage('video.html', {title : "1"});
     	}; 
     $scope.audio=function(){
-    	//$scope.ons.navigator.pushPage('video.html', {title : "1"});
+    	$scope.ons.navigator.pushPage('audio.html', {title : "1"});
     	}; 
     $scope.texto=function(){
     	//$scope.ons.navigator.pushPage('page4.html', {title : "1"});

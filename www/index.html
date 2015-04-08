@@ -1107,6 +1107,11 @@ under the License.
 			<ons-navigator animation="slide">
 				<ons-page ng-controller="MicroController">
 					<ons-toolbar>
+						<div class="left">
+							<ons-toolbar-button ng-click="menu.toggle()">
+								<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
+							</ons-toolbar-button>
+						</div>
 						<div class="center">
 							Prueba Micro contenido
 						</div>
@@ -1168,11 +1173,29 @@ under the License.
 				</ons-toolbar>
 				<ons-list style="margin-top: 10px">
 					<ons.list-item class="item" style=" text-align: center">
-					<video width="320" height="240" controls>
-  <source src="http:///empowerlabs.com/convocatoria-2015/vid/EmpowerLabs_OK_720.ogv" type="video/ogv">
-Your browser does not support the video tag.
-</video>
-						<audio controls>
+						<video width="320" height="240" controls>
+							<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</ons.list-item>
+				</ons-list>
+			</ons-page>
+		</ons-template>
+		<ons-template id="audio.html">
+			<ons-page ng-controller="AudioController">
+				<ons-toolbar>
+					<div class="left">
+						<ons-back-button>
+							Regresar
+						</ons-back-button>
+					</div>
+					<div class="center">
+						Micro Audio
+					</div>
+				</ons-toolbar>
+				<ons-list style="margin-top: 10px">
+					<ons.list-item class="item" style=" text-align: center">
+						<audio style="height: 40px;" controls>
 							<source src="http://empowerlabs.com/archivos/elabs/labs2015/graba/GrabacionEricBaez01-04-2015/GrabacionEricBaez01-04-2015.mp3" type="audio/mpeg">
 							Your browser does not support the audio element.
 						</audio>
