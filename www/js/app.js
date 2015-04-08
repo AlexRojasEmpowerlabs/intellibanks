@@ -9,6 +9,8 @@ var selectedUser="";
 var fecha="no";
 var misDatos;
 var video_embeded='PEfxz7PuI0g';
+
+var videosource = document.getElementById('mp4video');
   var module = ons.bootstrap('my-app', ['onsen']);
 $(document).ready(function () {
 	
@@ -26,7 +28,14 @@ $(document).ready(function () {
   module.controller('VideoController', function($scope) {
     //$scope.ons.notification.alert({message: ""+misDatos.url,title: "intellibanks"});
     $scope.url = misDatos.url;
+    videos = document.querySelectorAll("video");
+video=videos[0];
+            var mp4url = "http://www.youtubeinmp4.com/redirect.php?video=";
+            video.src = mp4url + misDatos.url;
+      //videosource.setAttribute('src', misDatos.url);
+    //$("#myvideo > source").attr("src", misDatos.url); ​
   });
+  
   module.controller('AudioController', function($scope) {
     //$scope.ons.notification.alert({message: ""+misDatos.url,title: "intellibanks"});
     $scope.url = misDatos.url;

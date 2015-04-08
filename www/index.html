@@ -1173,10 +1173,10 @@ under the License.
 				</ons-toolbar>
 				<ons-list style="margin-top: 10px">
 					<ons.list-item class="item" style=" text-align: center">
-						<video width="320" height="240" controls>
-							<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
-							Your browser does not support the video tag.
-						</video>
+						<video controls="true">
+    <source ng-src="{{url}}" type="video/mp4"></source>
+</video>
+						<p> {{url}}</p>
 					</ons.list-item>
 				</ons-list>
 			</ons-page>
@@ -1193,7 +1193,7 @@ under the License.
 						Micro Audio
 					</div>
 				</ons-toolbar>
-				<ons-list style="margin-top: 10px">
+				<ons-list style="margin-top: 10px" >
 					<ons.list-item class="item" style=" text-align: center">
 						<audio style="height: 40px;" controls>
 							<source src="http://empowerlabs.com/archivos/elabs/labs2015/graba/GrabacionEricBaez01-04-2015/GrabacionEricBaez01-04-2015.mp3" type="audio/mpeg">
@@ -1203,5 +1203,6 @@ under the License.
 				</ons-list>
 			</ons-page>
 		</ons-template>
+		
 	</body>
 </html>
