@@ -162,9 +162,9 @@ under the License.
 						<strong>Ayuda</strong>
 					</ons-list-item>
 
-					<ons-list-item class="menu-item " ng-click="menu.setMainPage('pageOne.html', {closeMenu: true})">
+					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page7.html', {closeMenu: true})">
 						<ons-icon icon="icon ion-android-information"></ons-icon>
-						<strong>Micro Contenido</strong>
+						<strong>Acerca de</strong>
 					</ons-list-item>
 				</ons-list>
 			</ons-page>
@@ -1106,131 +1106,5 @@ under the License.
 
 			</ons-page>
 		</ons-template>
-		<ons-template id="pageOne.html">
-  <ons-navigator animation="slide" var="app.navi">
-    <ons-page>
-      <ons-toolbar>
-        <div class="center">Prueba Micro contenido</div>
-      </ons-toolbar>
-      <ons-list ng-controller="MasterController2">
-      <ons-list-item>
-      
-<ons-list style="margin-top: 10px">
-							<ons-list-item class="item">
-								<header>
-									<span class="item-title">{{item.nombre}}</span>
-								</header>
-								<p class="item-desc">
-									{{item.descripcion}}
-								</p>
-								<p class="item-desc">
-									<strong>Por: </strong>{{item.autor}}
-								</p>
-								<p class="item-desc">
-									<strong>Aporto: </strong>{{item.aporto}}
-								</p>
-								<p class="item-desc">
-									<strong>Formato:: </strong>{{item.formato}}
-								</p>
-								<p class="item-desc">
-									<strong>Status: </strong>{{item.estatus}}
-								</p>
-							</ons-list-item>
-						</ons-list>
-      </ons-list-item>
-     	<ons-list-item class="item" modifier="chevron" ng-click="video(item)">Video</ons-list-item>
-     	<ons-list-item class="item" modifier="chevron" ng-click="audio()">Audio</ons-list-item>
-     	<ons-list-item class="item" modifier="chevron" ng-click="texto()">Texto</ons-list-item>
-     	<ons-list-item class="item" modifier="chevron" ng-click="presentacion()">Presentación</ons-list-item>
-      </ons-list>
-
-    </ons-page>
-  </ons-navigator>
-</ons-template>
-<ons-template id="page21.html">
-    <ons-page>
-      <ons-toolbar>
-      <div class="left">
-						<ons-back-button>
-						back
-						</ons-back-button>
-					</div>
-        <div class="center">Prueba Micro video</div>
-      </ons-toolbar>
- <ons-list style="margin-top: 10px">
-      <ons.list-item class="item" style=" text-align: center">
-      <iframe   ng-controller="DetailController2" controls
-  src="http://www.youtube.com/embed/scRWvWvB5wE" style="height: 250px; width: 95%;">
-Your user agent does not support the HTML5 Video element.
-</iframe>
-      </ons.list-item>
-      </ons-list>
-    </ons-page>
-</ons-template>
-<ons-template id="page31.html">
-    <ons-page>
-      <ons-toolbar>
-      <div class="left">
-						<ons-back-button>
-						back
-						</ons-back-button>
-					</div>
-        <div class="center">Prueba Micro audio</div>
-      </ons-toolbar>
- <ons-list style="margin-top: 10px">
-      <ons.list-item class="item" style=" text-align: center">
-      <audio controls>
-  <source src="http://empowerlabs.com/archivos/elabs/labs2015/graba/GrabacionEricBaez01-04-2015/GrabacionEricBaez01-04-2015.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-      </ons.list-item>
-      </ons-list>
-    </ons-page>
-</ons-template>
-<ons-template id="page41.html">
-    <ons-page>
-      <ons-toolbar>
-      <div class="left">
-						<ons-back-button>
-						back
-						</ons-back-button>
-					</div>
-        <div class="center">Prueba Micro texto</div>
-      </ons-toolbar>
- <ons-list style="margin-top: 10px">
-        
-     
-      <ons-list-item class="item">
-    
-        <ons-list-item class="item" ng-repeat="i in [1,2,3]">
-          <header>
-            <span class="item-title">Contenido de prueba</span>
-          </header>
-          <p class="item-desc">Esta versión inicial tiene la problemática de la complejidad en el desarrollo del contenido. Se uso implementando un template de Wordpress que es bastante amigable con los móviles, pero que no tiene la versatilidad para la creación de contenido ni la versatilidad para su despliegue en móviles.</p>
-        </ons-list-item>
-      </ons-list>
-    </ons-page>
-</ons-template>
-<ons-template id="page51.html">
-    <ons-page>
-      <ons-toolbar>
-      <div class="left">
-						<ons-back-button>
-						back
-						</ons-back-button>
-					</div>
-        <div class="center">Prueba Micro Presentación</div>
-       
-      </ons-toolbar>
- <ons-list style="margin-top: 10px">
-      <ons.list-item class="item" style=" text-align: center">
-        <div style="width: 100%; height: 430px;background-color:White; overflow: hidden;">
-      <iframe src="//www.slideshare.net/slideshow/embed_code/46732684?rel=0" style='width="80%"' height="467" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-      </div>
-      </ons-list-item>
-      </ons.list-item>
-      </ons-list>
-    </ons-page>
-</ons-template>
 	</body>
 </html>

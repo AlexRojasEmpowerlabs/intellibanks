@@ -1,5 +1,3 @@
-
-var misDatos;
 var logged="ok";
 var todos= {};
 var todosCall={};
@@ -13,41 +11,7 @@ var fecha="no";
 $(document).ready(function () {
 	
 	
-	module.controller('DetailController2', function($scope) {
-    //$scope.ons.notification.alert({message: ""+misDatos.url,title: "intellibanks"});
-    $scope.url = misDatos.url;
-  });
-
-  module.controller('MasterController2', function($scope, $data11,$http) {
-    $scope.item = $data11.item;  
-    $http.get('http://empowerlabs.com/proyectos/trackersAPI/mblocs/todos.php').
-    success(function(data, status, headers, config) {
-  	//$scope.ons.notification.alert({message: ""+data.url,title: "intellibanks"});
-   misDatos=data;
-   $scope.item=misDatos;
-    $scope.video=function(item){
-    	//$scope.ons.notification.alert({message: ""+item.url,title: "intellibanks"});
-    	$scope.ons.navigator.pushPage('page21.html', {title : "1"});}; 
-    $scope.audio=function(){
-    	$scope.ons.navigator.pushPage('page31.html', {title : "1"});}; 
-    $scope.texto=function(){
-    	$scope.ons.navigator.pushPage('page41.html', {title : "1"});};
-    $scope.presentacion=function(){
-    	$scope.ons.navigator.pushPage('page51.html', {title : "1"});};
-  }).
-  error(function(data, status, headers, config) {
-  	
-  });
-    
-  });
-
-  module.factory('$data11', function() {
-      var data = {};
-      
-      data.item = [misDatos];
-      
-      return data;
-  });
+	
 	
   module.controller('AppController', function($scope, $data) {
     $scope.doSomething = function() {
