@@ -36,10 +36,10 @@ $(document).ready(function () {
    $scope.item=misDatos;
     $scope.video=function(item){
     	//$scope.ons.notification.alert({message: ""+item.url,title: "intellibanks"});
-    	//$scope.ons.navigator.pushPage('video.html', {title : "1"});
+    	$scope.ons.navigator.pushPage('video.html', {title : "1"});
     	}; 
     $scope.audio=function(){
-    	$scope.ons.navigator.pushPage('video.html', {title : "1"});
+    	//$scope.ons.navigator.pushPage('video.html', {title : "1"});
     	}; 
     $scope.texto=function(){
     	//$scope.ons.navigator.pushPage('page4.html', {title : "1"});
