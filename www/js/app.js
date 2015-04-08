@@ -8,6 +8,7 @@ var People="[]";
 var selectedUser="";
 var fecha="no";
 var misDatos;
+var video_embeded='PEfxz7PuI0g';
   var module = ons.bootstrap('my-app', ['onsen']);
 $(document).ready(function () {
 	
