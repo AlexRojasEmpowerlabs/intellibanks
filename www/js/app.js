@@ -27,18 +27,29 @@ $(document).ready(function () {
   
   module.controller('VideoController', function($scope) {
     //$scope.ons.notification.alert({message: ""+misDatos.url,title: "intellibanks"});
-    $scope.url = misDatos.url;
+    $scope.url = misDatos[0].VideoResource;
     videos = document.querySelectorAll("video");
 video=videos[0];
+var isYoutube = misDatos[0].VideoResource.match(/(?:youtu|youtube)(?:\.com|\.be)\/([\w\W]+)/i);
+        if (isYoutube) {
+            var id = isYoutube[1].match(/watch\?v=|[\w\W]+/gi);
+            id = (id.length > 1) ? id.splice(1) : id;
+            id = id.toString();
             var mp4url = "http://www.youtubeinmp4.com/redirect.php?video=";
-            video.src = mp4url + misDatos.url;
+            //$scope.ons.notification.alert({message: ""+ mp4url + id,title: "intellibanks"});
+            video.src = mp4url + id;
+        }
+            //video.src = mp4url + misDatos.url;
       //videosource.setAttribute('src', misDatos.url);
     //$("#myvideo > source").attr("src", misDatos.url); ​
   });
   
   module.controller('AudioController', function($scope) {
     //$scope.ons.notification.alert({message: ""+misDatos.url,title: "intellibanks"});
-    $scope.url = misDatos.url;
+    $scope.url = misDatos[0].AudioResource;
+    audios = document.querySelectorAll("audio");
+audio=audios[0];
+audio.src=misDatos[0].AudioResource;
   });
 
   module.controller('MicroController', function($scope, $dataMicro,$http) {
@@ -47,12 +58,12 @@ video=videos[0];
     success(function(data, status, headers, config) {
   	//$scope.ons.notification.alert({message: ""+data.url,title: "intellibanks"});
    misDatos=data;
-   $scope.item=misDatos;
+   $scope.item=misDatos[0];
     $scope.video=function(item){
     	//$scope.ons.notification.alert({message: ""+item.url,title: "intellibanks"});
     	$scope.ons.navigator.pushPage('video.html', {title : "1"});
     	}; 
-    $scope.audio=function(){
+    $scope.audio=function(item){
     	$scope.ons.navigator.pushPage('audio.html', {title : "1"});
     	}; 
     $scope.texto=function(){
@@ -71,7 +82,7 @@ video=videos[0];
   module.factory('$dataMicro', function() {
       var data = {};
       
-      data.item = [misDatos];
+      data.item = misDatos;
       
       return data;
   });
