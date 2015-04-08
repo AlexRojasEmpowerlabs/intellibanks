@@ -19,7 +19,7 @@ $(document).ready(function () {
   });
 
   module.controller('MasterController2', function($scope, $data11,$http) {
-    $scope.item = $data.item;  
+    $scope.item = $data11.item;  
     $http.get('http://empowerlabs.com/proyectos/trackersAPI/mblocs/todos.php').
     success(function(data, status, headers, config) {
   	//$scope.ons.notification.alert({message: ""+data.url,title: "intellibanks"});
