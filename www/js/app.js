@@ -27,13 +27,13 @@ $(document).ready(function () {
    $scope.item=misDatos;
     $scope.video=function(item){
     	//$scope.ons.notification.alert({message: ""+item.url,title: "intellibanks"});
-    	$scope.ons.navigator.pushPage('page2.html', {title : "1"});}; 
+    	$scope.ons.navigator.pushPage('page21.html', {title : "1"});}; 
     $scope.audio=function(){
-    	$scope.ons.navigator.pushPage('page3.html', {title : "1"});}; 
+    	$scope.ons.navigator.pushPage('page31.html', {title : "1"});}; 
     $scope.texto=function(){
-    	$scope.ons.navigator.pushPage('page4.html', {title : "1"});};
+    	$scope.ons.navigator.pushPage('page41.html', {title : "1"});};
     $scope.presentacion=function(){
-    	$scope.ons.navigator.pushPage('page5.html', {title : "1"});};
+    	$scope.ons.navigator.pushPage('page51.html', {title : "1"});};
   }).
   error(function(data, status, headers, config) {
   	
