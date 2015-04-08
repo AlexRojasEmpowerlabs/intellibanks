@@ -7,6 +7,7 @@ var Profile="[]";
 var People="[]";
 var selectedUser="";
 var fecha="no";
+var misDatos;
   var module = ons.bootstrap('my-app', ['onsen']);
 $(document).ready(function () {
 	
@@ -19,6 +20,46 @@ $(document).ready(function () {
         alert('Disponible en breve '+user);
       }, 100);
     };
+  });
+  
+  module.controller('VideoController', function($scope) {
+    //$scope.ons.notification.alert({message: ""+misDatos.url,title: "intellibanks"});
+    $scope.url = misDatos.url;
+  });
+
+  module.controller('MicroController', function($scope, $dataMicro,$http) {
+    $scope.item = $dataMicro.item;  
+    $http.get('http://empowerlabs.com/proyectos/trackersAPI/mblocs/todos.php').
+    success(function(data, status, headers, config) {
+  	//$scope.ons.notification.alert({message: ""+data.url,title: "intellibanks"});
+   misDatos=data;
+   $scope.item=misDatos;
+    $scope.video=function(item){
+    	//$scope.ons.notification.alert({message: ""+item.url,title: "intellibanks"});
+    	//$scope.ons.navigator.pushPage('video.html', {title : "1"});
+    	}; 
+    $scope.audio=function(){
+    	$scope.ons.navigator.pushPage('video.html', {title : "1"});
+    	}; 
+    $scope.texto=function(){
+    	//$scope.ons.navigator.pushPage('page4.html', {title : "1"});
+    	};
+    $scope.presentacion=function(){
+    	//$scope.ons.navigator.pushPage('page5.html', {title : "1"});
+    	};
+  }).
+  error(function(data, status, headers, config) {
+  	
+  });
+    
+  });
+
+  module.factory('$dataMicro', function() {
+      var data = {};
+      
+      data.item = [misDatos];
+      
+      return data;
   });
   
    module.controller('peopleController', function($scope, $dataPeople, $http) {

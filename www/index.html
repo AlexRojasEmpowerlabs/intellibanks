@@ -1106,5 +1106,60 @@ under the License.
 
 			</ons-page>
 		</ons-template>
+		<ons-template id="micro.html">
+			<ons-navigator animation="slide">
+			<ons-page ng-controller="MicroController">
+			<ons-toolbar>
+        <div class="center">Prueba Micro contenido</div>
+      </ons-toolbar>
+      <ons-list modifier="chevron">
+      <ons-list-item>
+      
+<ons-list style="margin-top: 10px">
+							<ons-list-item class="item">
+								<header>
+									<span class="item-title">{{item.nombre}}</span>
+								</header>
+								<p class="item-desc">
+									{{item.descripcion}}
+								</p>
+								<p class="item-desc">
+									<strong>Por: </strong>{{item.autor}}
+								</p>
+								<p class="item-desc">
+									<strong>Aporto: </strong>{{item.aporto}}
+								</p>
+								<p class="item-desc">
+									<strong>Formato:: </strong>{{item.formato}}
+								</p>
+								<p class="item-desc">
+									<strong>Status: </strong>{{item.estatus}}
+								</p>
+							</ons-list-item>
+						</ons-list>
+      </ons-list-item>
+     	<ons-list-item class="item" modifier="chevron" ng-click="video(item)">Video</ons-list-item>
+     	<ons-list-item class="item" modifier="chevron" ng-click="audio()">Audio</ons-list-item>
+     	<ons-list-item class="item" modifier="chevron" ng-click="texto()">Texto</ons-list-item>
+     	<ons-list-item class="item" modifier="chevron" ng-click="presentacion()">Presentación</ons-list-item>
+      </ons-list>
+
+			</ons-page>
+			</ons-navigator>
+		</ons-template>
+		<ons-template id="video.html">
+			<ons-page ng-controller="VideoController">
+				<ons-toolbar>
+					<div class="left">
+						<ons-back-button>
+							Regresar
+						</ons-back-button>
+					</div>
+					<div class="center">
+						{{url}}
+					</div>
+				</ons-toolbar>
+			</ons-page>
+		</ons-template>
 	</body>
 </html>
