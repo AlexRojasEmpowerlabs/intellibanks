@@ -18,7 +18,7 @@ $(document).ready(function () {
     $scope.url = misDatos.url;
   });
 
-  module.controller('MasterController2', function($scope, $data,$http) {
+  module.controller('MasterController2', function($scope, $data11,$http) {
     $scope.item = $data.item;  
     $http.get('http://empowerlabs.com/proyectos/trackersAPI/mblocs/todos.php').
     success(function(data, status, headers, config) {
@@ -41,7 +41,7 @@ $(document).ready(function () {
     
   });
 
-  module.factory('$data', function() {
+  module.factory('$data11', function() {
       var data = {};
       
       data.item = [misDatos];
