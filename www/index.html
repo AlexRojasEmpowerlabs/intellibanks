@@ -124,18 +124,23 @@ under the License.
 
 					</ons-list-item>
 
-					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page1.html', {closeMenu: true})">
+					<ons-list-item class="menu-item " ng-click="menu.setMainPage('miTablero.html', {closeMenu: true})">
 						<ons-icon icon="ion-home custom-icon"></ons-icon>
+						<strong>Mi Tablero</strong>
+					</ons-list-item>
+
+					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page1.html', {closeMenu: true})">
+						<ons-icon icon="fa-suitcase custom-icon"></ons-icon>
 						<strong>Servicios</strong>
 					</ons-list-item>
 
 					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page2.html', {closeMenu: true})">
-						<ons-icon icon="ion-home custom-icon"></ons-icon>
+						<ons-icon icon="fa-folder custom-icon"></ons-icon>
 						<strong>Recepción</strong>
 					</ons-list-item>
 
 					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page3.html', {closeMenu: true})">
-						<ons-icon icon="ion-filing"></ons-icon>
+						<ons-icon icon="fa-tasks"></ons-icon>
 						<strong>Mesa de trabajo</strong>
 					</ons-list-item>
 
@@ -162,14 +167,54 @@ under the License.
 						<strong>Ayuda</strong>
 					</ons-list-item>
 
-					<ons-list-item class="menu-item " ng-click="menu.setMainPage('micro.html', {closeMenu: true})">
+					<!--<ons-list-item class="menu-item " ng-click="menu.setMainPage('micro.html', {closeMenu: true})">
 						<ons-icon icon="icon ion-android-information"></ons-icon>
 						<strong>Micro Contenido</strong>
-					</ons-list-item>
+					</ons-list-item>-->
 				</ons-list>
 			</ons-page>
 		</ons-template>
 
+		<ons-template id="miTablero.html">
+			<ons-navigator animation="slide">
+				<ons-page ng-controller="MiTableroController">
+					<ons-toolbar modifier="transparent">
+						<div class="left">
+							<ons-toolbar-button ng-click="menu.toggle()">
+								<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+						<div class="center">
+							Mi Tablero
+						</div>
+
+						<!--<div class="right">
+							<ons-toolbar-button ng-click="menu.setMainPage('micro.html', {closeMenu: true})">
+								<ons-icon icon="fa-graduation-cap custom-icon" size="28px" fixed-width="false"></ons-icon>
+							</ons-toolbar-button>
+						</div>-->
+					</ons-toolbar>
+					<ons-list ng-controller="TicketController">
+						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter: finalUser : strict " ng-click="showTicket(item)">
+								<ons-row>
+								<ons-col width="60px">
+									<div class="item-thum"></div>
+								</ons-col>
+								<ons-col>
+									<header>
+										<span class="item-title">{{item.problema}}</span>
+										<span class="item-label">{{item.fecha}}</span>
+									</header>
+									<p class="item-desc">
+										{{item.solucion}}
+									</p>
+								</ons-col>
+							</ons-row>
+						</ons-list-item>
+					</ons-list>
+				</ons-page>
+			</ons-navigator>
+		</ons-template>
 		<ons-template id="page1.html">
 			<ons-navigator animation="slide" var="app.navi">
 				<ons-page>
@@ -185,7 +230,7 @@ under the License.
 
 						<div class="right">
 							<ons-toolbar-button ng-click="menu.setMainPage('calendar.html', {closeMenu: true})">
-								<ons-icon icon="ion-ios7-calendar custom-icon" size="28px" fixed-width="false"></ons-icon>
+								<ons-icon icon="fa-calendar custom-icon" size="28px" fixed-width="false"></ons-icon>
 							</ons-toolbar-button>
 						</div>
 					</ons-toolbar>
@@ -224,11 +269,11 @@ under the License.
 				<ons-toolbar>
 					<div class="left">
 						<ons-back-button>
-							Regresar
+							
 						</ons-back-button>
 					</div>
 					<div class="center">
-						{{item.nombre}}
+						{{item.act}}
 					</div>
 				</ons-toolbar>
 
@@ -359,11 +404,11 @@ under the License.
 				<ons-toolbar>
 					<div class="left">
 						<ons-back-button>
-							Regresar
+							
 						</ons-back-button>
 					</div>
 					<div class="center">
-						{{item.nombre}}
+						{{item.subject}}
 					</div>
 				</ons-toolbar>
 
@@ -449,7 +494,7 @@ under the License.
 							</ons-toolbar-button>
 						</div>
 						<div class="center">
-							Ticket Tracker
+							Mesa de Trabajo
 						</div>
 					</ons-toolbar>
 					<div class="navigation-bar">
@@ -568,17 +613,39 @@ under the License.
 					<br>
 				</ons-template>
 
+			</ons-navigator>
+		</ons-template>
+		<ons-template id="page4.html">
+			<ons-navigator animation="slide">
+				<ons-tabbar>
+					<ons-tab>
+						<!-- page="mensajes.html"-->
+						<ons-icon icon="ion-ios7-chatboxes" class="tab-icon"></ons-icon><span class="tab-label">Chats</span>
+					</ons-tab>
+
+					<ons-tab page="people.html" active="true">
+						<ons-icon icon="ion-ios7-people" class="tab-icon"></ons-icon><span class="tab-label">Colaboradores</span>
+					</ons-tab>
+
+					<ons-tab page="perfil.html">
+						<ons-icon icon="ion-person" class="tab-icon"></ons-icon><span class="tab-label">Mi Perfil</span>
+					</ons-tab>
+				</ons-tabbar>
+
+			</ons-navigator>
+		</ons-template>
+		
 				<ons-template id="ticketOne.html">
 					<ons-page ng-controller="TicketOneController">
 
 						<ons-toolbar>
 							<div class="left">
-								<ons-back-button  ng-click="menu.setMainPage('page3.html')">
-									Regresar
+								<ons-back-button>
+									
 								</ons-back-button>
 							</div>
 							<div class="center">
-								{{item.nombre}}
+								{{item.problema}}
 							</div>
 						</ons-toolbar>
 
@@ -594,7 +661,7 @@ under the License.
 											<span class="item-label">{{item.fecha}}</span>
 										</header>
 										<p class="item-desc">
-											{{item.solucion}}
+											<strong>Responsable: </strong>{{item.solucion}}
 										</p>
 									</ons-col>
 								</ons-row>
@@ -633,27 +700,6 @@ under the License.
 
 					</ons-page>
 				</ons-template>
-			</ons-navigator>
-		</ons-template>
-		<ons-template id="page4.html">
-			<ons-navigator animation="slide">
-				<ons-tabbar>
-					<ons-tab>
-						<!-- page="mensajes.html"-->
-						<ons-icon icon="ion-ios7-chatboxes" class="tab-icon"></ons-icon><span class="tab-label">Chats</span>
-					</ons-tab>
-
-					<ons-tab page="people.html" active="true">
-						<ons-icon icon="ion-ios7-people" class="tab-icon"></ons-icon><span class="tab-label">Colaboradores</span>
-					</ons-tab>
-
-					<ons-tab page="perfil.html">
-						<ons-icon icon="ion-person" class="tab-icon"></ons-icon><span class="tab-label">Mi Perfil</span>
-					</ons-tab>
-				</ons-tabbar>
-
-			</ons-navigator>
-		</ons-template>
 		<ons-template id="page5.html">
 			<ons-navigator animation="slide" var="app.navi">
 				<ons-toolbar>
@@ -666,21 +712,7 @@ under the License.
 						Ajustes
 					</div>
 				</ons-toolbar>
-				<ons-row class="profile-wrapper">
-					<!--<ons-col width="60px" class="profile-image-wrapper">
-					<div class="profile-image"></div>
-					</ons-col>-->
-
-					<ons-col>
-						<div class="profile-name">
-							Ajustables
-						</div>
-						<div class="profile-email">
-							foobar@example.com
-						</div>
-					</ons-col>
-
-				</ons-row>
+				
 
 				<div class="settings-header">
 					Audio
@@ -772,7 +804,7 @@ under the License.
 			<ons-page>
 				<ons-toolbar>
 					<div class="center">
-						Intellibanks Móvil
+						Notaría 22 Móvil
 					</div>
 				</ons-toolbar>
 
@@ -1002,16 +1034,7 @@ under the License.
 					</div>
 				</ons-toolbar>
 				<ons-carousel swipeable overscrollable auto-scroll fullscreen var="carousel">
-					<ons-carousel-item style="background-color: gray;">
-						<div class="imagen-carrusel"><img src="img/ayuda-final/interfaz login.png" width="100%" height="80%">
-						</div>
-						<h2 style="color: #FFFFFF; text-align: center;">Login</h2>
-					</ons-carousel-item>
-					<ons-carousel-item style="background-color: #373B44;">
-						<div class="imagen-carrusel"><img src="img/ayuda-final/interfaz perfil final.png" width="100%" height="80%">
-						</div>
-						<h2 style="color: #FFFFFF; text-align: center;">Actos</h2>
-					</ons-carousel-item>
+					
 					<ons-carousel-item style="background-color: #085078;">
 						<div class="item-label"><img src="img/ayuda/Imagen3.png" width="100%" height="80%">
 						</div>
@@ -1090,11 +1113,11 @@ under the License.
 							</ons-col>
 							<ons-col>
 								<header>
-									<span class="item-title">{{item.nombre}}</span>
+									<span class="item-title">{{item.act}}</span>
 									<span class="item-label">{{item.createdate}}</span>
 								</header>
 								<p class="item-desc">
-									{{item.description}}
+									{{item.account}}
 								</p>
 							</ons-col>
 						</ons-row>
@@ -1168,7 +1191,7 @@ under the License.
 				<ons-list style="margin-top: 10px">
 					<ons.list-item class="item" style=" text-align: center">
 						<video controls="true">
-    <source ng-src="{{url}}" type="video/mp4"></source>
+    <source ng-src="https://www.youtube.com/watch?v=scRWvWvB5wE" type="video/mp4"></source>
 </video>
 						<p> {{url}}</p>
 					</ons.list-item>

@@ -8,9 +8,7 @@ var People="[]";
 var selectedUser="";
 var fecha="no";
 var misDatos;
-var video_embeded='PEfxz7PuI0g';
 
-var videosource = document.getElementById('mp4video');
   var module = ons.bootstrap('my-app', ['onsen']);
 $(document).ready(function () {
 	
@@ -30,7 +28,7 @@ $(document).ready(function () {
     $scope.url = misDatos[0].VideoResource;
     videos = document.querySelectorAll("video");
 video=videos[0];
-var isYoutube = misDatos[0].VideoResource.match(/(?:youtu|youtube)(?:\.com|\.be)\/([\w\W]+)/i);
+var isYoutube = video.src.match(/(?:youtu|youtube)(?:\.com|\.be)\/([\w\W]+)/i);
         if (isYoutube) {
             var id = isYoutube[1].match(/watch\?v=|[\w\W]+/gi);
             id = (id.length > 1) ? id.splice(1) : id;
@@ -197,6 +195,7 @@ audio.src=misDatos[0].AudioResource;
     $dataTickets.items=data;
     todos=data;
     $scope.items = $dataTickets.items;  
+    $scope.finalUser=user;
     
     $scope.showTicket = function(item) {
       var selectedItem = item;
@@ -230,6 +229,7 @@ audio.src=misDatos[0].AudioResource;
 					}
 					$scope.fecha=fecha;
 					$scope.finalFecha=fecha.year+'-'+fecha.indice+'-'+fecha.dia;
+					$scope.finalUser=user;
     $scope.items = todosSPTE;  
     $http.get('http://empowerlabs.com/proyectos/helpDesk/todosSPTE.php').
   success(function(data, status, headers, config) {
@@ -255,6 +255,9 @@ audio.src=misDatos[0].AudioResource;
       
       return dataSPTE;
   });
-
+ 
+ module.controller('MiTableroController',function($scope){
+ 	
+ });
 
    });
