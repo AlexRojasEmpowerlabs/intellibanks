@@ -43,7 +43,7 @@ under the License.
 
 		<style>
 			body {
-				background: #66953C;
+				background: #525252;
 			}
 			.item {
 				padding: 10px;
@@ -242,7 +242,7 @@ under the License.
 						</div>
 					</div>
 
-					<ons-list ng-controller="SPTEMasterController">
+					<ons-list ng-controller="SPTEMasterController" style="overflow: scroll">
 						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter:entradaSPTE " ng-click="showSPTEDetail(item)">
 							<ons-row>
 								<ons-col width="60px">
@@ -801,10 +801,10 @@ under the License.
 			</ons-page>
 		</ons-template>
 		<ons-template id="login2.html">
-			<ons-page>
-				<ons-toolbar>
+			<ons-page style="background-color: #EFEFEF">
+				<ons-toolbar style="background-color: #EFEFEF">
 					<div class="center">
-						Notaría 22 Móvil
+						<img src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/Logo_Notara22_boton_Wiki.png" />
 					</div>
 				</ons-toolbar>
 
