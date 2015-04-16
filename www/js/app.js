@@ -32,6 +32,11 @@ $(document).ready(function () {
     $dataDirectorio.items=data;
     directorio=data;
     $scope.items = $dataDirectorio.items;  
+    $scope.detalleCliente=function(item){
+    	var selectedItem = item;
+      $dataDirectorio.selectedItem = selectedItem;
+      $scope.ons.navigator.pushPage('detailDirectorio.html', {title : selectedItem.id});
+    };
     
   }).
   error(function(data, status, headers, config) {
@@ -159,6 +164,10 @@ audio.src=misDatos[0].AudioResource;
     //$scope.ons.notification.alert({message: ""+fecha,title: "intellibanks"});
       };
     
+  });
+
+	module.controller('DetailDirectorioController', function($scope,$dataDirectorio) {
+		$scope.item=$dataDirectorio.selectedItem;
   });
   
   module.controller('SelectedFechaController', function($scope, $data) {

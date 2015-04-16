@@ -251,7 +251,7 @@ under the License.
 						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter:entradaSPTE " ng-click="showSPTEDetail(item)">
 							<ons-row>
 								<ons-col width="60px">
-									<div class="item-thum"><img style="height: 50px; width: 50px;" src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/Iconpluma_rellena.png"/></div>
+									<div class="item-thum"><img style="height: 50px; width: 50px;" src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/icon_pluma_color1.png"/></div>
 								</ons-col>
 								<ons-col>
 									<header>
@@ -385,7 +385,7 @@ under the License.
 						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter : entradaRecepcion" ng-click="showDetail(item)">
 							<ons-row>
 								<ons-col width="60px">
-									<div class="item-thum"><img style="height: 50px; width: 50px;" src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/Iconpluma_rellena.png"/></div>
+									<div class="item-thum"><img style="height: 50px; width: 50px;" src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/icon_pluma_color1.png"/></div>
 								</ons-col>
 								<ons-col>
 									<header>
@@ -515,7 +515,7 @@ under the License.
 						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter : entradaTicket" ng-click="showTicket(item)">
 							<ons-row>
 								<ons-col width="60px">
-									<div class="item-thum"><img style="height: 50px; width: 50px;" src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/Iconpluma_rellena.png"/></div>
+									<div class="item-thum"><img style="height: 50px; width: 50px;" src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/icon_pluma_color1.png"/></div>
 								</ons-col>
 								<ons-col>
 									<header>
@@ -1250,18 +1250,18 @@ under the License.
 					</div>
 
 					<ons-list ng-controller="DirectorioController">
-						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter:entradaDirectorio ">
+						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter:entradaDirectorio " ng-click="detalleCliente(item)">
 							<ons-row>
 								<ons-col width="60px">
-									<div class="item-thum"><img style="height: 50px; width: 50px;" src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/Iconpluma_rellena.png"/></div>
+									<div class="item-thum"><img style="height: 50px; width: 50px;" src="img/def.png"/></div>
 								</ons-col>
 								<ons-col>
 									<header>
 										<span class="item-title">{{item.Name}}</span>
-										<span class="item-label">{{item.Email}}</span>
+										<span class="item-label">{{item.City}}, {{item.State}}</span>
 									</header>
 									<p class="item-desc">
-										{{item.Mobile}}
+										{{item.occupation}}
 									</p>
 								</ons-col>
 							</ons-row>
@@ -1269,6 +1269,73 @@ under the License.
 					</ons-list>
 				</ons-page>
 			</ons-navigator>
+		</ons-template>
+		<ons-template id="detailDirectorio.html"><ons-page ng-controller="DetailDirectorioController">
+
+				<div class="status-bar-div"></div>
+				<ons-toolbar>
+					<div class="left">
+						<ons-back-button>
+							
+						</ons-back-button>
+					</div>
+					<div class="center">
+						{{item.Name}}
+					</div>
+				</ons-toolbar>
+
+				<ons-list modifier="inset" style="margin-top: 10px">
+					<ons-list-item class="item">
+						<ons-row>
+							<ons-col width="60px">
+								<div class="item-thum"><img style="height: 50px; width: 50px;" src="img/def.png"/></div>
+							</ons-col>
+							<ons-col>
+									<header>
+										<span class="item-title">{{item.Name}}</span>
+										<span class="item-label">{{item.City}}, {{item.State}}</span>
+									</header>
+									<p class="item-desc">
+										{{item.occupation}}
+									</p>
+
+							</ons-col>
+						</ons-row>
+					</ons-list-item>
+
+					<ons-list-item modifier="chevron" ng-click="doSomething()">
+						<ons-icon icon="ion-star" fixed-width="true" style="color: #ccc"></ons-icon>
+						Marcar como favorito
+					</ons-list-item>
+				</ons-list>
+
+				<ons-list style="margin-top: 10px">
+					<ons-list-item class="item">
+						<header>
+							<span class="item-title">{{item.Name}}</span>
+							<span class="item-title">{{item.occupation}}</span>
+						</header>
+						<p class="item-desc">
+							{{item.Address}}
+						</p>
+						<p class="item-desc">
+							<strong>Móvil: </strong>{{item.Mobile}}
+						</p>
+						<p class="item-desc">
+							<strong>Email: </strong>{{item.Email}}
+						</p>
+						<p class="item-desc">
+							<strong>Responsable: </strong>{{item.AccountManager}}
+						</p>
+						<p class="item-desc">
+							<strong>Pasatiempo: </strong>{{item.hobbies}}
+						</p>
+					</ons-list-item>
+				</ons-list>
+
+				<br>
+
+			</ons-page>
 		</ons-template>
 	</body>
 </html>
