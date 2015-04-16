@@ -7,6 +7,7 @@ var Profile="[]";
 var People="[]";
 var selectedUser="";
 var fecha="no";
+var directorio={};
 var misDatos;
 
   var module = ons.bootstrap('my-app', ['onsen']);
@@ -21,6 +22,27 @@ $(document).ready(function () {
         alert('Disponible en breve '+user);
       }, 100);
     };
+  });
+  
+  module.controller('DirectorioController',function($scope,$dataDirectorio,$http){
+  	
+    $scope.items = directorio;  
+    $http.get('http://empowerlabs.com/proyectos/helpDesk/directorio.php').
+  success(function(data, status, headers, config) {
+    $dataDirectorio.items=data;
+    directorio=data;
+    $scope.items = $dataDirectorio.items;  
+    
+  }).
+  error(function(data, status, headers, config) {
+  	
+  });
+  });
+  
+  module.factory('$dataDirectorio',function(){
+  	var data={};
+  	data.items=directorio;
+  	return data;
   });
   
   module.controller('VideoController', function($scope) {

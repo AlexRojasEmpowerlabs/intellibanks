@@ -149,6 +149,11 @@ under the License.
 				<br>
 
 				<ons-list class="menu-list">
+					<ons-list-item class="menu-item custom-icon" ng-click="menu.setMainPage('directorio.html', {closeMenu: true})">
+						<ons-icon icon="ion-android-information"></ons-icon>
+						<strong>Clientes</strong>
+					</ons-list-item>
+
 					<ons-list-item class="menu-item custom-icon" ng-click="menu.setMainPage('page4.html', {closeMenu: true})">
 						<ons-icon icon="ion-ios7-chatbubble"></ons-icon>
 						<strong>Mensajes</strong>
@@ -246,7 +251,7 @@ under the License.
 						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter:entradaSPTE " ng-click="showSPTEDetail(item)">
 							<ons-row>
 								<ons-col width="60px">
-									<div class="item-thum"></div>
+									<div class="item-thum"><img style="height: 50px; width: 50px;" src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/Iconpluma_rellena.png"/></div>
 								</ons-col>
 								<ons-col>
 									<header>
@@ -380,7 +385,7 @@ under the License.
 						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter : entradaRecepcion" ng-click="showDetail(item)">
 							<ons-row>
 								<ons-col width="60px">
-									<div class="item-thum"></div>
+									<div class="item-thum"><img style="height: 50px; width: 50px;" src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/Iconpluma_rellena.png"/></div>
 								</ons-col>
 								<ons-col>
 									<header>
@@ -510,7 +515,7 @@ under the License.
 						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter : entradaTicket" ng-click="showTicket(item)">
 							<ons-row>
 								<ons-col width="60px">
-									<div class="item-thum"></div>
+									<div class="item-thum"><img style="height: 50px; width: 50px;" src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/Iconpluma_rellena.png"/></div>
 								</ons-col>
 								<ons-col>
 									<header>
@@ -804,7 +809,7 @@ under the License.
 			<ons-page style="background-color: #EFEFEF">
 				<ons-toolbar style="background-color: #EFEFEF">
 					<div class="center">
-						<img src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/Logo_Notara22_boton_Wiki.png" />
+						<img src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/LogoN22-280x80.png" />
 					</div>
 				</ons-toolbar>
 
@@ -1221,6 +1226,49 @@ under the License.
 				</ons-list>
 			</ons-page>
 		</ons-template>
-		
+		<ons-template id="directorio.html">
+			<ons-navigator animation="slide"> 
+				<ons-page>
+				
+					<ons-toolbar>
+						<div class="left">
+							<ons-toolbar-button ng-click="menu.toggle()">
+								<ons-icon icon="ion-navicon custom-icon" size="28px" fixed-width="false"></ons-icon>
+							</ons-toolbar-button>
+						</div>
+						<div class="center">
+							Clientes
+						</div>
+					</ons-toolbar>
+					<div class="navigation-bar">
+						
+						<div class="navigation-bar__center">
+
+							<input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Buscar" ng-model="entradaDirectorio">
+
+						</div>
+					</div>
+
+					<ons-list ng-controller="DirectorioController">
+						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter:entradaDirectorio ">
+							<ons-row>
+								<ons-col width="60px">
+									<div class="item-thum"><img style="height: 50px; width: 50px;" src="http://www.empowerlabs.com/intellibanks/pub/ProjectDigitalDesignStudio/ProyectoNotaria22/Iconpluma_rellena.png"/></div>
+								</ons-col>
+								<ons-col>
+									<header>
+										<span class="item-title">{{item.Name}}</span>
+										<span class="item-label">{{item.Email}}</span>
+									</header>
+									<p class="item-desc">
+										{{item.Mobile}}
+									</p>
+								</ons-col>
+							</ons-row>
+						</ons-list-item>
+					</ons-list>
+				</ons-page>
+			</ons-navigator>
+		</ons-template>
 	</body>
 </html>
