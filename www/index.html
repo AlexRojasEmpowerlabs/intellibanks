@@ -50,19 +50,19 @@ under the License.
 				line-height: 1;
 			}
 			.item-thum {
-				background-color: #ccc;
+				background-color: #FFFFFF;
 				width: 50px;
 				height: 50px;
 				border-radius: 4px;
 			}
 			.item-thum2 {
-				background-color: #2C5278;
+				background-color: #FFFFFF;
 				width: 50px;
 				height: 50px;
 				border-radius: 4px;
 			}
 			.item-thum3 {
-				background-color: #000;
+				background-color: #FFFFFF;
 				width: 50px;
 				height: 50px;
 				border-radius: 4px;
@@ -124,12 +124,12 @@ under the License.
 
 					</ons-list-item>
 
-					<ons-list-item class="menu-item " ng-click="menu.setMainPage('miTablero.html', {closeMenu: true})">
 						<ons-icon icon="ion-home custom-icon"></ons-icon>
 						<strong>Mi Tablero</strong>
 					</ons-list-item>
 
 					<ons-list-item class="menu-item " ng-click="menu.setMainPage('page1.html', {closeMenu: true})">
+					<ons-list-item class="menu-item " ng-click="menu.setMainPage('miTablero.html', {closeMenu: true})">
 						<ons-icon icon="fa-suitcase custom-icon"></ons-icon>
 						<strong>Servicios</strong>
 					</ons-list-item>
@@ -964,7 +964,7 @@ under the License.
 						<ons-list-item class="person" modifier="tappable" ng-repeat="i in data | filter:entrada">
 							<ons-row>
 								<ons-col width="40px">
-									<img src="img/def.png" class="person-image">
+									<img src="img/user_icon_blue.png" class="person-image">
 								</ons-col>
 								<ons-col class="person-name" ng-click="newMessage(i)">
 									{{i}}
@@ -1253,7 +1253,7 @@ under the License.
 						<ons-list-item modifier="chevron" class="item" ng-repeat="item in items | filter:entradaDirectorio " ng-click="detalleCliente(item)">
 							<ons-row>
 								<ons-col width="60px">
-									<div class="item-thum"><img style="height: 50px; width: 50px;" src="img/def.png"/></div>
+									<div class="item-thum"><img style="height: 50px; width: 50px;" src="img/user_icon_blue.png"/></div>
 								</ons-col>
 								<ons-col>
 									<header>
@@ -1288,7 +1288,7 @@ under the License.
 					<ons-list-item class="item">
 						<ons-row>
 							<ons-col width="60px">
-								<div class="item-thum"><img style="height: 50px; width: 50px;" src="img/def.png"/></div>
+								<div class="item-thum"><img style="height: 50px; width: 50px;" src="img/user_icon_blue.png"/></div>
 							</ons-col>
 							<ons-col>
 									<header>
