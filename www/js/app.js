@@ -27,7 +27,7 @@ $(document).ready(function () {
   module.controller('DirectorioController',function($scope,$dataDirectorio,$http){
   	
     $scope.items = directorio;  
-    $http.get('http://empowerlabs.com/proyectos/helpDesk/directorio.php').
+    $http.get('http://empowerlabs.com/proyectos/notariadesarrollo/directorio.php').
   success(function(data, status, headers, config) {
     $dataDirectorio.items=data;
     directorio=data;
@@ -113,7 +113,7 @@ audio.src=misDatos[0].AudioResource;
   });
   
    module.controller('peopleController', function($scope, $dataPeople, $http) {
-    $http.get('http://empowerlabs.com/proyectos/helpDesk/getUsers.php').
+    $http.get('http://empowerlabs.com/proyectos/notariadesarrollo/getUsers.php').
   success(function(data, status, headers, config) {
   	//$scope.ons.notification.alert({message: ""+data.firstname,title: "intellibanks"});
     $dataPeople=data;
@@ -139,7 +139,7 @@ audio.src=misDatos[0].AudioResource;
   });
   
   module.controller('profileController', function($scope, $dataProfile, $http) {
-    $http.get('http://empowerlabs.com/proyectos/helpDesk/getUserData.php?user='+user).
+    $http.get('http://empowerlabs.com/proyectos/notariadesarrollo/getUserData.php?user='+user).
   success(function(data, status, headers, config) {
   	//$scope.ons.notification.alert({message: ""+data.firstname,title: "intellibanks"});
     $dataProfile=data;
@@ -191,7 +191,7 @@ audio.src=misDatos[0].AudioResource;
   module.controller('MasterController', function($scope, $data, $http) {
   	//getTodos();
     $scope.items = todosCall;  
-    $http.get('http://empowerlabs.com/proyectos/helpDesk/todosCall.php').
+    $http.get('http://empowerlabs.com/proyectos/notariadesarrollo/todosCall.php').
   success(function(data, status, headers, config) {
   	data.reverse();
     $data.items=data;
@@ -220,7 +220,7 @@ audio.src=misDatos[0].AudioResource;
   });
   module.controller('TicketController', function($scope, $dataTickets,$http) {
   	$scope.items=todos;
-  	$http.get('http://empowerlabs.com/proyectos/helpDesk/todos.php').
+  	$http.get('http://empowerlabs.com/proyectos/notariadesarrollo/todos.php').
   success(function(data, status, headers, config) {
   	data.reverse();
     $dataTickets.items=data;
@@ -262,7 +262,7 @@ audio.src=misDatos[0].AudioResource;
 					$scope.finalFecha=fecha.year+'-'+fecha.indice+'-'+fecha.dia;
 					$scope.finalUser=user;
     $scope.items = todosSPTE;  
-    $http.get('http://empowerlabs.com/proyectos/helpDesk/todosSPTE.php').
+    $http.get('http://empowerlabs.com/proyectos/notariadesarrollo/todosSPTE.php').
   success(function(data, status, headers, config) {
   	//data= data.sort(function(a,b){return a.id - b.id;});
   	data.reverse();

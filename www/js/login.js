@@ -1,6 +1,6 @@
 user="nouser";
 		function send(){
-			url= "http://empowerlabs.com/proyectos/helpDesk/login.php";
+			url= "http://empowerlabs.com/proyectos/notariadesarrollo/login.php";
 			modal.show();
   	$.ajax({
       	type: 'POST',
